@@ -1,0 +1,17 @@
+<RCC>
+  <qresource>
+    <file>audio-input-line.png</file>
+    <file>audio-headset.png</file>
+    <file>chain.png</file>
+    <file>DMIC.png</file>
+    <file>Headset_output.png</file>
+    <file>spkout.png</file>
+    <file>SPDIFOUT.png</file>
+    <file>SPDIFIN.png</file>
+    <file>loudspeaker.png</file>
+    <file>input_small.png</file>
+    <file>Line_In.png</file>
+    <file>Line_Out.png</file>
+    <file>input_big.png</file>
+  </qresource>
+</RCC>
