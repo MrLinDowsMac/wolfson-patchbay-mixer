@@ -3,6 +3,7 @@ from PyQt4.QtCore import *
 from dragbutton import DragButton
 from wiringgraphicsview import *
 import collections
+import subprocess
 
 import icons_rc
 
@@ -261,7 +262,13 @@ proxy_btn_AIF1TX2_4.setWidget(btn_AIF1TX2_4)
 proxy_btn_AIF1TX2_4.setAcceptDrops(True)
 scene.addItem(proxy_btn_AIF1TX2_4)
 
-#TODO: Implement method to trigger amixer command:
+def amixer_command(control, value):
+    p = subprocess.Popen(["amixer", "-c0", "sset", control, value ], stdout=subprocess.PIPE)
+    p.communicate()
+    rc = p.returncode
+    print rc
+    return rc
+
 
 #Slot for connecting by drag n drop
 def on_link(input, jack):
@@ -275,18 +282,22 @@ def on_link(input, jack):
 #        print actions_dic[ str(input)[4:] ].isEnabled()
         #if actions_dic[ str(input)[4:] ].isEnabled() == True:
         if actions_dic[ str(input.objectName()[4:]) ].isEnabled() == True:
-            #Input name as key, and a tuple( jack name, a new instance of Wire ) as value.
-            #wire_dic[  str(input)[4:] ] = ( str(jack)[4:] , Wire(  widget_container.findChild( DragButton,  jack) , widget_container.findChild( DragButton, input ) , None, scene))
-            wire_dic[  str(input.objectName())[4:] ] = ( str(jack.objectName())[4:] , Wire( jack , input , None, scene))
-            #TODO: Put the call to the method that calls the amixer command
-            #Disable input option in menu
+            #Run amixer command and gets returncode
+            if amixer_command( input.controlName, jack.controlName ) == 0:
+		  #Input name as key, and a tuple( jack name, a new instance of Wire ) as value. 
+	          wire_dic[  str(input.objectName())[4:] ] = ( str(jack.objectName())[4:] , Wire( jack , input , None, scene))
+		  #Disable input option in menu
+       	          actions_dic[ str(input.objectName())[4:] ].setEnabled(False)
+                  print "Connection Sucessful"
+	    else:
+	       print "Connection Failed"
+	    
             print actions_dic
             #actions_dic[ str(input)[4:] ].setEnabled(False)
-            actions_dic[ str(input.objectName())[4:] ].setEnabled(False)
     print wire_dic
 
 def on_press(self):
-    #Condition checks if receiving object is a button receives that Drops. If is false it means that is Jack connector dragbutton
+    #Condition checks if receiving object is a button receives that Drops. If is false it means that is a Jack connector dragbutton
     if self.sender().acceptDrops() == False:
         print self.sender()
         for action in actions_dic:
@@ -295,15 +306,18 @@ def on_press(self):
     
     elif self.sender().acceptDrops() == True: #is for inputs, mouse press should disconnect any connection to them
         input =  str(self.sender().objectName())[4:]
-        #if wire_dic[]
-        #print connection
         if wire_dic.get( input ) != None:
-            #Clear line
-            wire_dic[ input ][1].clear()
-            #Delete object reference by deleting key
-            del wire_dic[ input ]
-            #Enable the input in the menu
-            actions_dic[ input ].setEnabled(True)
+	    #Run amixer command and checks returncode, sucess command is a 0
+	    if amixer_command( self.sender().controlName, "None" ) == 0:
+               #Clear line
+               wire_dic[ input ][1].clear()
+               #Delete object reference by deleting key
+               del wire_dic[ input ]
+               #Enable the input in the menu
+               actions_dic[ input ].setEnabled(True)
+	       print "Disconnected"
+	    else:
+	       print "Can't disconnect"
         
 
 
@@ -317,13 +331,17 @@ def on_connect(self,  input):
     #Condition to check if the connection was already created
     #if wire_dic.get( input ) == None:
     if wire_dic.get( str(input.objectName())[4:] ) == None:
-        #Sets the tuple as the key and a Wire object as the value
-        #wire_dic[ input ] =  ( str(jack_connector.objectName())[4:] ,  Wire(  jack_connector , widget_container.findChild( DragButton,  'btn_' + input ) , None, scene),  )
-        wire_dic[ str(input.objectName())[4:] ] =  ( str(jack_connector.objectName())[4:] ,  Wire(  jack_connector , input , None, scene),  )
-        #TODO: Put the call to the method that calls the amixer command
-        #Disable input in menu
-        #actions_dic[ input ].setEnabled(False)
-        actions_dic[ str(input.objectName())[4:] ].setEnabled(False)
+        
+	#Run amixer command and checks returncode
+	if amixer_command( input.controlName, jack_connector.controlName ) == 0:
+	     #Sets the tuple as the key and a Wire object as the value
+	     wire_dic[ str(input.objectName())[4:] ] =  ( str(jack_connector.objectName())[4:] ,  Wire(  jack_connector , input , None, scene),  )
+	     #Disable input in menu
+	     actions_dic[ str(input.objectName())[4:] ].setEnabled(False)
+	     print "Connection Sucessful"
+	else:
+	     print "Connection Failed"
+       
         print wire_dic
     
 #Load Menu options for Jacks dragbuttons
@@ -368,7 +386,7 @@ for jacks in jacks_dic:
 view = WiringGraphicsView(None, scene)
 #view.resize(640, 480)
 view.show()
-view.setWindowTitle("Wolfson Connector and Mixer")
+view.setWindowTitle("Wolfson Patchbay and Mixer")
 #and paint a wire between those buttons
 #wire_dic['wire_1'] = Wire(btn_AIF1RX1, btn_AIF1TX2_4, None, scene)
 #wire_dic['wire_1'].clear()
