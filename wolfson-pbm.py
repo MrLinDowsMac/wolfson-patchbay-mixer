@@ -266,7 +266,7 @@ def amixer_command(control, value):
     p = subprocess.Popen(["amixer", "-c0", "sset", control, value ], stdout=subprocess.PIPE)
     p.communicate()
     rc = p.returncode
-    print rc
+    #print rc
     return rc
 
 
@@ -284,14 +284,14 @@ def on_link(input, jack):
         if actions_dic[ str(input.objectName()[4:]) ].isEnabled() == True:
             #Run amixer command and gets returncode
             if amixer_command( input.controlName, jack.controlName ) == 0:
-		  #Input name as key, and a tuple( jack name, a new instance of Wire ) as value. 
-	          wire_dic[  str(input.objectName())[4:] ] = ( str(jack.objectName())[4:] , Wire( jack , input , None, scene))
-		  #Disable input option in menu
-       	          actions_dic[ str(input.objectName())[4:] ].setEnabled(False)
-                  print "Connection Sucessful"
-	    else:
-	       print "Connection Failed"
-	    
+            #Input name as key, and a tuple( jack name, a new instance of Wire ) as value. 
+                wire_dic[  str(input.objectName())[4:] ] = ( str(jack.objectName())[4:] , Wire( jack , input , None, scene))
+                #Disable input option in menu
+                actions_dic[ str(input.objectName())[4:] ].setEnabled(False)
+                print "Connection Sucessful"
+            else:
+                print "Connection Failed"
+            
             print actions_dic
             #actions_dic[ str(input)[4:] ].setEnabled(False)
     print wire_dic
@@ -307,18 +307,17 @@ def on_press(self):
     elif self.sender().acceptDrops() == True: #is for inputs, mouse press should disconnect any connection to them
         input =  str(self.sender().objectName())[4:]
         if wire_dic.get( input ) != None:
-	    #Run amixer command and checks returncode, sucess command is a 0
-	    if amixer_command( self.sender().controlName, "None" ) == 0:
+            #Run amixer command and checks returncode, sucess command is a 0
+            if amixer_command( self.sender().controlName, "None" ) == 0:
                #Clear line
                wire_dic[ input ][1].clear()
                #Delete object reference by deleting key
                del wire_dic[ input ]
                #Enable the input in the menu
                actions_dic[ input ].setEnabled(True)
-	       print "Disconnected"
-	    else:
-	       print "Can't disconnect"
-        
+               print "Disconnected"
+            else:
+                print "Can't disconnect"
 
 
 #This method is for connecting the buttons with a Wire from jack buttons menu
@@ -331,18 +330,16 @@ def on_connect(self,  input):
     #Condition to check if the connection was already created
     #if wire_dic.get( input ) == None:
     if wire_dic.get( str(input.objectName())[4:] ) == None:
-        
-	#Run amixer command and checks returncode
-	if amixer_command( input.controlName, jack_connector.controlName ) == 0:
-	     #Sets the tuple as the key and a Wire object as the value
-	     wire_dic[ str(input.objectName())[4:] ] =  ( str(jack_connector.objectName())[4:] ,  Wire(  jack_connector , input , None, scene),  )
-	     #Disable input in menu
-	     actions_dic[ str(input.objectName())[4:] ].setEnabled(False)
-	     print "Connection Sucessful"
-	else:
-	     print "Connection Failed"
-       
-        print wire_dic
+        #Run amixer command and checks returncode
+        if amixer_command( input.controlName, jack_connector.controlName ) == 0:
+            #Sets the tuple as the key and a Wire object as the value
+            wire_dic[ str(input.objectName())[4:] ] =  ( str(jack_connector.objectName())[4:] ,  Wire(  jack_connector , input , None, scene),  )
+            #Disable input in menu
+            actions_dic[ str(input.objectName())[4:] ].setEnabled(False)
+            print "Connection Sucessful"
+        else:
+            print "Connection Failed"
+    print wire_dic
     
 #Load Menu options for Jacks dragbuttons
 #create sub-menus
@@ -387,16 +384,5 @@ view = WiringGraphicsView(None, scene)
 #view.resize(640, 480)
 view.show()
 view.setWindowTitle("Wolfson Patchbay and Mixer")
-#and paint a wire between those buttons
-#wire_dic['wire_1'] = Wire(btn_AIF1RX1, btn_AIF1TX2_4, None, scene)
-#wire_dic['wire_1'].clear()
-#del wire_dic['wire_1']
-
-#wire1 = Wire(btn_AIF1RX1, btn_AIF1TX2_4, None, scene)
-#wire2 = Wire(button4, button3, None, scene)
-#wire1.clear()
-#wire1 = None
-#view.paintWire(button1, button2)
-#view.paintWire(button4, button3)
 
 app.exec_()
