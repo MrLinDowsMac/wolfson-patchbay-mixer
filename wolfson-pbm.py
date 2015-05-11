@@ -18,7 +18,7 @@ jacks_dic = {}
 inputs_dic = collections.OrderedDict()
 wire_dic = {}
 
-#AIF1RX (PLAYBACK CONTROLS)
+#                                     AIF1RX (PLAYBACK CONTROLS)
 
 # put a button into the scene and move it
 btn_AIF1RX1 = DragButton()
@@ -77,7 +77,7 @@ AIF1RX1_layout.addWidget(btn_AIF1RX1)
 AIF1RX2_layout.addWidget(btn_AIF1RX2)
 
 
-#AIF1TX (RECORD INPUTS)
+#                                                /////  AIF1TX (RECORD INPUTS)    ////
 
 btn_AIF1TX1_1 = DragButton()
 btn_AIF1TX1_1.setObjectName("btn_AIF1TX1_1")
@@ -217,6 +217,74 @@ record_playback_layouts.addLayout(AIF1RX_main_layout)
 record_playback_layouts.addLayout(AIF1TX_main_layout)
 #widget_container.setFixedWidth(290)
 
+#TODO: Create Layouts for Input/Output controls
+#                                                    /////       Digital Microphones (DMIC)   ////
+
+#IN2L (LINE IN LEFT CHANNEL)
+btn_IN2L = DragButton()
+btn_IN2L.setObjectName("btn_IN2L")
+btn_IN2L.setControlName("IN2L")
+btn_IN2L.setAllowDrag(True) #Allow Drag n Drop of DragButton
+btn_IN2L.setAcceptDrops(False)
+btn_IN2L.setGeometry(QRect(-100, 50, 51, 31)) #Set dimensions of it
+#Set icon of IN2L
+icon = QIcon()
+icon.addPixmap(QPixmap(":/audio-input-line.png"), QIcon.Normal, QIcon.Off)
+btn_IN2L.setIcon(icon)
+btn_IN2L.setFlat(False)
+btn_IN2L.setMenu(menu)
+jacks_dic['IN2L'] = btn_IN2L
+
+#IN2R (LINE IN RIGHT CHANNEL)
+btn_IN2R = DragButton()
+btn_IN2R.setObjectName("btn_IN2R")
+btn_IN2R.setControlName("IN2R")
+btn_IN2R.setAllowDrag(True) #Allow Drag n Drop of DragButton
+btn_IN2R.setAcceptDrops(False)
+btn_IN2R.setGeometry(QRect(-100, 50, 51, 31)) #Set dimensions of it
+#Set icon of IN2L
+icon = QIcon()
+icon.addPixmap(QPixmap(":/audio-input-line.png"), QIcon.Normal, QIcon.Off)
+btn_IN2R.setIcon(icon)
+btn_IN2R.setFlat(False)
+btn_IN2R.setMenu(menu)
+jacks_dic['IN2R'] = btn_IN2R
+
+#Labels and Icons
+lbl_IN2L = QtGui.QLabel()
+lbl_IN2L.setObjectName("lbl_IN2L")
+lbl_IN2R = QtGui.QLabel()
+lbl_IN2R.setObjectName("lbl_IN2R")
+lbl_IN2L.setText("<html><head/><body><p><img src=\":/DMIC.png\"/><span style=\" font-weight:600;\"> IN2L</span></p></body></html>")
+lbl_IN2R.setText("<html><head/><body><p><img src=\":/DMIC.png\"/><span style=\" font-weight:600;\"> IN2R</span></p></body></html>")
+lbl_DMIC = QtGui.QLabel()
+lbl_DMIC.setObjectName("lbl_DMIC")
+lbl_DMIC.setText("<html><head/><body><p><span style=\" font-weight:600;\">DMIC</span></p></body></html>")
+
+
+#Layouts
+IN2L_layout = QHBoxLayout()
+IN2L_layout.addWidget(lbl_IN2L)
+IN2L_layout.addWidget(btn_IN2L)
+
+IN2R_layout = QHBoxLayout()
+IN2R_layout.addWidget(lbl_IN2R)
+IN2R_layout.addWidget(btn_IN2R)
+
+IN2_layout = QVBoxLayout()
+IN2_layout.addLayout(IN2L_layout)
+IN2_layout.addLayout(IN2R_layout)
+
+DMIC_layout = QHBoxLayout()
+DMIC_layout.addWidget(lbl_DMIC)
+DMIC_layout.addLayout(IN2_layout)
+
+
+#                                                                     ////  Inputs Layouts   ////
+
+
+#Fits all the layouts here
+record_playback_layouts.addLayout(DMIC_layout)
 widget_scene = scene.addWidget(widget_container)
 
 # Instantiate our own proxy which forwars drag/drop events to the child widget
