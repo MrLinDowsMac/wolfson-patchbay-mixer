@@ -212,7 +212,8 @@ AIF1TX2_inputs_layout.setSpacing(0)
 AIF1TX2_inputs_layout.setSizeConstraint(QtGui.QLayout.SetDefaultConstraint)
 
 #Wrap Playback/Record controls into a layout
-record_playback_layouts = QHBoxLayout(widget_container)
+#record_playback_layouts = QHBoxLayout(widget_container)
+record_playback_layouts = QHBoxLayout()
 record_playback_layouts.addLayout(AIF1RX_main_layout)
 record_playback_layouts.addLayout(AIF1TX_main_layout)
 #widget_container.setFixedWidth(290)
@@ -220,7 +221,7 @@ record_playback_layouts.addLayout(AIF1TX_main_layout)
 #TODO: Create Layouts for Input/Output controls
 #                                                    /////       Digital Microphones (DMIC)   ////
 
-#IN2L (LINE IN LEFT CHANNEL)
+#IN2L (Headset Mic IN LEFT CHANNEL) 
 btn_IN2L = DragButton()
 btn_IN2L.setObjectName("btn_IN2L")
 btn_IN2L.setControlName("IN2L")
@@ -235,7 +236,7 @@ btn_IN2L.setFlat(False)
 btn_IN2L.setMenu(menu)
 jacks_dic['IN2L'] = btn_IN2L
 
-#IN2R (LINE IN RIGHT CHANNEL)
+#IN2R (Headset IN RIGHT CHANNEL)
 btn_IN2R = DragButton()
 btn_IN2R.setObjectName("btn_IN2R")
 btn_IN2R.setControlName("IN2R")
@@ -250,13 +251,17 @@ btn_IN2R.setFlat(False)
 btn_IN2R.setMenu(menu)
 jacks_dic['IN2R'] = btn_IN2R
 
+#Checkbox On/off
+chk_box = QtGui.QCheckBox('On')
+chk_box.setObjectName("chk_box")
+
 #Labels and Icons
 lbl_IN2L = QtGui.QLabel()
 lbl_IN2L.setObjectName("lbl_IN2L")
 lbl_IN2R = QtGui.QLabel()
 lbl_IN2R.setObjectName("lbl_IN2R")
-lbl_IN2L.setText("<html><head/><body><p><img src=\":/DMIC.png\"/><span style=\" font-weight:600;\"> IN2L</span></p></body></html>")
-lbl_IN2R.setText("<html><head/><body><p><img src=\":/DMIC.png\"/><span style=\" font-weight:600;\"> IN2R</span></p></body></html>")
+lbl_IN2L.setText("<html><head/><body><p><img src=\":/DMIC.png\"/><span style=\" font-weight:600;\"> IN2 L</span></p></body></html>")
+lbl_IN2R.setText("<html><head/><body><p><img src=\":/DMIC.png\"/><span style=\" font-weight:600;\"> IN2 R</span></p></body></html>")
 lbl_DMIC = QtGui.QLabel()
 lbl_DMIC.setObjectName("lbl_DMIC")
 lbl_DMIC.setText("<html><head/><body><p><span style=\" font-weight:600;\">DMIC</span></p></body></html>")
@@ -272,6 +277,7 @@ IN2R_layout.addWidget(lbl_IN2R)
 IN2R_layout.addWidget(btn_IN2R)
 
 IN2_layout = QVBoxLayout()
+IN2_layout.addWidget(chk_box)
 IN2_layout.addLayout(IN2L_layout)
 IN2_layout.addLayout(IN2R_layout)
 
@@ -279,12 +285,236 @@ DMIC_layout = QHBoxLayout()
 DMIC_layout.addWidget(lbl_DMIC)
 DMIC_layout.addLayout(IN2_layout)
 
+#                                                                           /////    HEADSET MIC      ////
+#IN2L (LINE IN LEFT CHANNEL)
+btn_IN1L = DragButton()
+btn_IN1L.setObjectName("btn_IN1L")
+btn_IN1L.setControlName("IN1L")
+btn_IN1L.setAllowDrag(True) #Allow Drag n Drop of DragButton
+btn_IN1L.setAcceptDrops(False)
+btn_IN1L.setGeometry(QRect(-100, 50, 51, 31)) #Set dimensions of it
+#Set icon of IN1L
+icon = QIcon()
+icon.addPixmap(QPixmap(":/audio-input-line.png"), QIcon.Normal, QIcon.Off)
+btn_IN1L.setIcon(icon)
+btn_IN1L.setFlat(False)
+btn_IN1L.setMenu(menu)
+jacks_dic['IN1L'] = btn_IN1L
 
-#                                                                     ////  Inputs Layouts   ////
+#IN2R (LINE IN RIGHT CHANNEL)
+btn_IN1R = DragButton()
+btn_IN1R.setObjectName("btn_IN1R")
+btn_IN1R.setControlName("IN1R")
+btn_IN1R.setAllowDrag(True) #Allow Drag n Drop of DragButton
+btn_IN1R.setAcceptDrops(False)
+btn_IN1R.setGeometry(QRect(-100, 50, 51, 31)) #Set dimensions of it
+#Set icon of IN1R
+icon = QIcon()
+icon.addPixmap(QPixmap(":/audio-input-line.png"), QIcon.Normal, QIcon.Off)
+btn_IN1R.setIcon(icon)
+btn_IN1R.setFlat(False)
+btn_IN1R.setMenu(menu)
+jacks_dic['IN1R'] = btn_IN1R
 
+#Checkbox On/off
+chk_headsetmic = QtGui.QCheckBox('On')
+chk_headsetmic.setObjectName("chk_headsetmic")
+
+#Labels and Icons
+lbl_IN1L = QtGui.QLabel()
+lbl_IN1L.setObjectName("lbl_IN1L")
+lbl_IN1R = QtGui.QLabel()
+lbl_IN1R.setObjectName("lbl_IN1R")
+lbl_IN1L.setText("<html><head/><body><p><span style=\" font-weight:600;\"> IN1 L</span></p></body></html>")
+lbl_IN1R.setText("<html><head/><body><p><span style=\" font-weight:600;\"> IN1 R</span></p></body></html>")
+lbl_HeadsetMic = QtGui.QLabel()
+lbl_HeadsetMic.setObjectName("lbl_HeadsetMic")
+lbl_HeadsetMic.setText("<html><head/><body><p><img src=\":/audio-headset.png\"/></p><p><span style=\" font-weight:600;\"> Headset Mic</span></p></body></html>")
+
+
+#Layouts
+IN1L_layout = QHBoxLayout()
+IN1L_layout.addWidget(lbl_IN1L)
+IN1L_layout.addWidget(btn_IN1L)
+
+IN1R_layout = QHBoxLayout()
+IN1R_layout.addWidget(lbl_IN1R)
+IN1R_layout.addWidget(btn_IN1R)
+
+IN1_layout = QVBoxLayout()
+IN1_layout.addWidget(chk_headsetmic)
+IN1_layout.addLayout(IN1L_layout)
+IN1_layout.addLayout(IN1R_layout)
+
+HeadsetMic_layout = QHBoxLayout()
+HeadsetMic_layout.addWidget(lbl_HeadsetMic)
+HeadsetMic_layout.addLayout(IN1_layout)
+
+#                                                                       /// LINE IN (IN3) ///
+#IN3L (LINE IN LEFT CHANNEL)
+btn_IN3L = DragButton()
+btn_IN3L.setObjectName("btn_IN3L")
+btn_IN3L.setControlName("IN3L")
+btn_IN3L.setAllowDrag(True) #Allow Drag n Drop of DragButton
+btn_IN3L.setAcceptDrops(False)
+btn_IN3L.setGeometry(QRect(-100, 50, 51, 31)) #Set dimensions of it
+#Set icon of IN3L
+icon = QIcon()
+icon.addPixmap(QPixmap(":/audio-input-line.png"), QIcon.Normal, QIcon.Off)
+btn_IN3L.setIcon(icon)
+btn_IN3L.setFlat(False)
+btn_IN3L.setMenu(menu)
+jacks_dic['IN3L'] = btn_IN3L
+
+#IN3R (LINE IN RIGHT CHANNEL)
+btn_IN3R = DragButton()
+btn_IN3R.setObjectName("btn_IN3R")
+btn_IN3R.setControlName("IN3R")
+btn_IN3R.setAllowDrag(True) #Allow Drag n Drop of DragButton
+btn_IN3R.setAcceptDrops(False)
+btn_IN3R.setGeometry(QRect(-100, 50, 51, 31)) #Set dimensions of it
+#Set icon of IN3R
+icon = QIcon()
+icon.addPixmap(QPixmap(":/audio-input-line.png"), QIcon.Normal, QIcon.Off)
+btn_IN3R.setIcon(icon)
+btn_IN3R.setFlat(False)
+btn_IN3R.setMenu(menu)
+jacks_dic['IN3R'] = btn_IN3R
+
+#Checkbox On/off
+chk_linein = QtGui.QCheckBox('On')
+chk_linein.setObjectName("chk_linein")
+
+#Labels and Icons
+lbl_IN3L = QtGui.QLabel()
+lbl_IN3L.setObjectName("lbl_IN3L")
+lbl_IN3R = QtGui.QLabel()
+lbl_IN3R.setObjectName("lbl_IN3R")
+lbl_IN3L.setText("<html><head/><body><p><span style=\" font-weight:600;\"> IN3 L</span></p></body></html>")
+lbl_IN3R.setText("<html><head/><body><p><span style=\" font-weight:600;\"> IN3 R</span></p></body></html>")
+lbl_LineIn = QtGui.QLabel()
+lbl_LineIn.setObjectName("lbl_LineIn")
+lbl_LineIn.setText("<html><head/><body><p><img src=\":/Line_In.png\"/></p><p><span style=\" font-weight:600;\"> Line In</span></p></body></html>")
+
+
+#Layouts
+IN3L_layout = QHBoxLayout()
+IN3L_layout.addWidget(lbl_IN3L)
+IN3L_layout.addWidget(btn_IN3L)
+
+IN3R_layout = QHBoxLayout()
+IN3R_layout.addWidget(lbl_IN3R)
+IN3R_layout.addWidget(btn_IN3R)
+
+IN3_layout = QVBoxLayout()
+IN3_layout.addWidget(chk_linein)
+IN3_layout.addLayout(IN3L_layout)
+IN3_layout.addLayout(IN3R_layout)
+
+LineIn_layout = QHBoxLayout()
+LineIn_layout.addWidget(lbl_LineIn)
+LineIn_layout.addLayout(IN3_layout)
+
+#                                                                       /// SPDIF IN (AIF2RX) ///
+#AIF2RX1 (SPDIF IN LEFT CHANNEL)
+btn_AIF2RX1 = DragButton()
+btn_AIF2RX1.setObjectName("btn_AIF2RX1")
+btn_AIF2RX1.setControlName("AIF2RX1")
+btn_AIF2RX1.setAllowDrag(True) #Allow Drag n Drop of DragButton
+btn_AIF2RX1.setAcceptDrops(False)
+btn_AIF2RX1.setGeometry(QRect(-100, 50, 51, 31)) #Set dimensions of it
+#Set icon of AIF2RX1
+icon = QIcon()
+icon.addPixmap(QPixmap(":/audio-input-line.png"), QIcon.Normal, QIcon.Off)
+btn_AIF2RX1.setIcon(icon)
+btn_AIF2RX1.setFlat(False)
+btn_AIF2RX1.setMenu(menu)
+jacks_dic['AIF2RX1'] = btn_AIF2RX1
+
+#AIF2RX2 (SPDIF IN RIGHT CHANNEL)
+btn_AIF2RX2 = DragButton()
+btn_AIF2RX2.setObjectName("btn_AIF2RX2")
+btn_AIF2RX2.setControlName("AIF2RX2")
+btn_AIF2RX2.setAllowDrag(True) #Allow Drag n Drop of DragButton
+btn_AIF2RX2.setAcceptDrops(False)
+btn_AIF2RX2.setGeometry(QRect(-100, 50, 51, 31)) #Set dimensions of it
+#Set icon of AIF2RX2
+icon = QIcon()
+icon.addPixmap(QPixmap(":/audio-input-line.png"), QIcon.Normal, QIcon.Off)
+btn_AIF2RX2.setIcon(icon)
+btn_AIF2RX2.setFlat(False)
+btn_AIF2RX2.setMenu(menu)
+jacks_dic['AIF2RX2'] = btn_AIF2RX2
+
+#Checkbox On/off
+chk_spdifin = QtGui.QCheckBox('On')
+chk_spdifin.setObjectName("chk_spdifin")
+
+#Labels and Icons
+lbl_AIF2RX1 = QtGui.QLabel()
+lbl_AIF2RX1.setObjectName("lbl_AIF2RX1")
+lbl_AIF2RX2 = QtGui.QLabel()
+lbl_AIF2RX2.setObjectName("lbl_AIF2RX2")
+lbl_AIF2RX1.setText("<html><head/><body><p><span style=\" font-weight:600;\"> AIF2RX1 L</span></p></body></html>")
+lbl_AIF2RX2.setText("<html><head/><body><p><span style=\" font-weight:600;\"> AIF2RX2 R</span></p></body></html>")
+lbl_SPDIFIN = QtGui.QLabel()
+lbl_SPDIFIN.setObjectName("lbl_SPDIFIN")
+lbl_SPDIFIN.setText("<html><head/><body><p><img src=\":/SPDIFIN.png\"/></p><p><span style=\" font-weight:600;\"> SPDIF In</span></p></body></html>")
+
+
+#Layouts
+AIF2RX1_layout = QHBoxLayout()
+AIF2RX1_layout.addWidget(lbl_AIF2RX1)
+AIF2RX1_layout.addWidget(btn_AIF2RX1)
+
+AIF2RX2_layout = QHBoxLayout()
+AIF2RX2_layout.addWidget(lbl_AIF2RX2)
+AIF2RX2_layout.addWidget(btn_AIF2RX2)
+
+AIF2RX_layout = QVBoxLayout()
+AIF2RX_layout.addWidget(chk_spdifin)
+AIF2RX_layout.addLayout(AIF2RX1_layout)
+AIF2RX_layout.addLayout(AIF2RX2_layout)
+
+SPDIF_IN_layout = QHBoxLayout()
+SPDIF_IN_layout.addWidget(lbl_SPDIFIN)
+SPDIF_IN_layout.addLayout(AIF2RX_layout)
+
+
+
+
+#                                                                        ////  In Devices Layouts  ////
+#Put all the IN Devices
+In_layouts = QVBoxLayout()
+lbl_in = QLabel("IN Devices")
+In_layouts.addWidget(lbl_in)
+In_layouts.addLayout(HeadsetMic_layout) 
+In_layouts.addLayout(DMIC_layout)
+In_layouts.addLayout(LineIn_layout)
+In_layouts.addLayout(SPDIF_IN_layout)
+
+#                                                                       /// Out Devices Layouts ///
+Out_layouts = QVBoxLayout()
+lbl_out = QLabel("Out Devices")
+Out_layouts.addWidget(lbl_out)
+
+#                                                                       ///Filters Layouts///
+#TODO: Implement Filters
+
+
+
+
+#IN/FILTERS/OUT Layout
+In_filters_out_layout = QHBoxLayout()
+In_filters_out_layout.addLayout(In_layouts)
+#In this line should be the filters layout
+In_filters_out_layout.addLayout(Out_layouts)
 
 #Fits all the layouts here
-record_playback_layouts.addLayout(DMIC_layout)
+Main_layout = QVBoxLayout(widget_container)
+Main_layout.addLayout(record_playback_layouts)
+Main_layout.addLayout(In_filters_out_layout)
+
 widget_scene = scene.addWidget(widget_container)
 
 # Instantiate our own proxy which forwars drag/drop events to the child widget
