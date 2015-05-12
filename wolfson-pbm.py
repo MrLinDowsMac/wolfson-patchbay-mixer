@@ -218,7 +218,7 @@ record_playback_layouts.addLayout(AIF1RX_main_layout)
 record_playback_layouts.addLayout(AIF1TX_main_layout)
 #widget_container.setFixedWidth(290)
 
-#TODO: Create Layouts for Input/Output controls
+#                                               ////////////////// INPUT DEVICES ////////////////////////
 #                                                    /////       Digital Microphones (DMIC)   ////
 
 #IN2L (Headset Mic IN LEFT CHANNEL) 
@@ -480,6 +480,88 @@ SPDIF_IN_layout = QHBoxLayout()
 SPDIF_IN_layout.addWidget(lbl_SPDIFIN)
 SPDIF_IN_layout.addLayout(AIF2RX_layout)
 
+#                                                                       ////Tone Generator 1 ////
+#Tone Generator 1 KHz
+btn_ToneGenerator1 = DragButton()
+btn_ToneGenerator1.setObjectName("btn_ToneGenerator1")
+btn_ToneGenerator1.setControlName("Tone Generator 1")
+btn_ToneGenerator1.setAllowDrag(True) #Allow Drag n Drop of DragButton
+btn_ToneGenerator1.setAcceptDrops(False)
+btn_ToneGenerator1.setGeometry(QRect(-100, 50, 51, 31)) #Set dimensions of it
+#Set icon of Tone Generator 1
+icon = QIcon()
+icon.addPixmap(QPixmap(":/audio-input-line.png"), QIcon.Normal, QIcon.Off)
+btn_ToneGenerator1.setIcon(icon)
+btn_ToneGenerator1.setFlat(False)
+btn_ToneGenerator1.setMenu(menu)
+jacks_dic['Tone Generator 1'] = btn_ToneGenerator1
+
+#Tone Generator 2 KHz
+btn_ToneGenerator2 = DragButton()
+btn_ToneGenerator2.setObjectName("btn_ToneGenerator2")
+btn_ToneGenerator2.setControlName("Tone Generator 2")
+btn_ToneGenerator2.setAllowDrag(True) #Allow Drag n Drop of DragButton
+btn_ToneGenerator2.setAcceptDrops(False)
+btn_ToneGenerator2.setGeometry(QRect(-100, 50, 51, 31)) #Set dimensions of it
+#Set icon of AIF2RX2
+icon = QIcon()
+icon.addPixmap(QPixmap(":/audio-input-line.png"), QIcon.Normal, QIcon.Off)
+btn_ToneGenerator2.setIcon(icon)
+btn_ToneGenerator2.setFlat(False)
+btn_ToneGenerator2.setMenu(menu)
+jacks_dic['Tone Generator 2'] = btn_ToneGenerator2
+
+#White Noise Generator
+btn_NoiseGenerator = DragButton()
+btn_NoiseGenerator.setObjectName("btn_NoiseGenerator")
+btn_NoiseGenerator.setControlName("Noise Generator")
+btn_NoiseGenerator.setAllowDrag(True) #Allow Drag n Drop of DragButton
+btn_NoiseGenerator.setAcceptDrops(False)
+btn_NoiseGenerator.setGeometry(QRect(-100, 50, 51, 31)) #Set dimensions of it
+#Set icon of AIF2RX2
+icon = QIcon()
+icon.addPixmap(QPixmap(":/audio-input-line.png"), QIcon.Normal, QIcon.Off)
+btn_NoiseGenerator.setIcon(icon)
+btn_NoiseGenerator.setFlat(False)
+btn_NoiseGenerator.setMenu(menu)
+jacks_dic['Noise Generator'] = btn_NoiseGenerator
+
+#Labels and Icons
+lbl_ToneGenerator1 = QtGui.QLabel()
+lbl_ToneGenerator1.setObjectName("lbl_ToneGenerator1")
+lbl_ToneGenerator2 = QtGui.QLabel()
+lbl_ToneGenerator2.setObjectName("lbl_ToneGenerator2")
+lbl_NoiseGenerator = QtGui.QLabel()
+lbl_NoiseGenerator.setObjectName("lbl_NoiseGenerator")
+lbl_ToneGenerator1.setText("<html><head/><body><p><span style=\" font-weight:600;\"> Tone Generator 1 (1Khz)</span></p></body></html>")
+lbl_ToneGenerator2.setText("<html><head/><body><p><span style=\" font-weight:600;\"> Tone Generator 2 (1KHz)</span></p></body></html>")
+lbl_NoiseGenerator.setText("<html><head/><body><p><span style=\" font-weight:600;\"> White Noise Generator </span></p></body></html>")
+lbl_Generators = QtGui.QLabel()
+lbl_Generators.setObjectName("lbl_Generators")
+lbl_Generators.setText("<html><head/><body><p><span style=\" font-weight:600;\"> Noise Generators</span></p></body></html>")
+
+
+#Layouts
+ToneGenerator1_layout = QHBoxLayout()
+ToneGenerator1_layout.addWidget(lbl_ToneGenerator1)
+ToneGenerator1_layout.addWidget(btn_ToneGenerator1)
+
+ToneGenerator2_layout = QHBoxLayout()
+ToneGenerator2_layout.addWidget(lbl_ToneGenerator2)
+ToneGenerator2_layout.addWidget(btn_ToneGenerator2)
+
+NoiseGenerator_layout = QHBoxLayout()
+NoiseGenerator_layout.addWidget(lbl_NoiseGenerator)
+NoiseGenerator_layout.addWidget(btn_NoiseGenerator)
+
+Generators_layout = QVBoxLayout()
+Generators_layout.addWidget(lbl_Generators)
+Generators_layout.addLayout(ToneGenerator1_layout)
+Generators_layout.addLayout(ToneGenerator2_layout)
+Generators_layout.addLayout(NoiseGenerator_layout)
+
+#                                                            //////////////// OUTPUT DEVICES ////////////////
+#                                                                       //// Headset (HPOUT1) ////
 
 
 
@@ -492,6 +574,8 @@ In_layouts.addLayout(HeadsetMic_layout)
 In_layouts.addLayout(DMIC_layout)
 In_layouts.addLayout(LineIn_layout)
 In_layouts.addLayout(SPDIF_IN_layout)
+In_layouts.addLayout(Generators_layout)
+
 
 #                                                                       /// Out Devices Layouts ///
 Out_layouts = QVBoxLayout()
@@ -500,8 +584,6 @@ Out_layouts.addWidget(lbl_out)
 
 #                                                                       ///Filters Layouts///
 #TODO: Implement Filters
-
-
 
 
 #IN/FILTERS/OUT Layout
@@ -679,7 +761,7 @@ for jacks in jacks_dic:
 
 # Create the view using the scene
 view = WiringGraphicsView(None, scene)
-#view.resize(640, 480)
+#view.resize(480,720)
 view.show()
 view.setWindowTitle("Wolfson Patchbay and Mixer")
 
