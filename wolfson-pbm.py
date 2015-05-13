@@ -875,7 +875,7 @@ widget_scene = scene.addWidget(widget_container)
 
 # Instantiate our own proxy which forwars drag/drop events to the child widget
 #of AIFTX
-
+#                       // Proxy Widgets for AIF1TX1 //
 proxy_btn_AIF1TX1_1 = ProxyWidget() 
 proxy_btn_AIF1TX1_1.setWidget(btn_AIF1TX1_1)
 proxy_btn_AIF1TX1_1.setAcceptDrops(True)
@@ -895,7 +895,7 @@ proxy_btn_AIF1TX1_4 = ProxyWidget()
 proxy_btn_AIF1TX1_4.setWidget(btn_AIF1TX1_4)
 proxy_btn_AIF1TX1_4.setAcceptDrops(True)
 scene.addItem(proxy_btn_AIF1TX1_4)
-
+#                    // Proxy Widgets for AIF1TX2  //
 proxy_btn_AIF1TX2_1 = ProxyWidget() 
 proxy_btn_AIF1TX2_1.setWidget(btn_AIF1TX2_1)
 proxy_btn_AIF1TX2_1.setAcceptDrops(True)
@@ -915,6 +915,49 @@ proxy_btn_AIF1TX2_4 = ProxyWidget()
 proxy_btn_AIF1TX2_4.setWidget(btn_AIF1TX2_4)
 proxy_btn_AIF1TX2_4.setAcceptDrops(True)
 scene.addItem(proxy_btn_AIF1TX2_4)
+
+
+#                // Proxy Widgets for HPOUT1 //
+proxy_btn_HPOUT1L_1 = ProxyWidget() 
+proxy_btn_HPOUT1L_1.setWidget(btn_HPOUT1L_1)
+proxy_btn_HPOUT1L_1.setAcceptDrops(True)
+scene.addItem(proxy_btn_HPOUT1L_1)
+
+proxy_btn_HPOUT1L_2 = ProxyWidget() 
+proxy_btn_HPOUT1L_2.setWidget(btn_HPOUT1L_2)
+proxy_btn_HPOUT1L_2.setAcceptDrops(True)
+scene.addItem(proxy_btn_HPOUT1L_2)
+
+proxy_btn_HPOUT1L_3 = ProxyWidget() 
+proxy_btn_HPOUT1L_3.setWidget(btn_HPOUT1L_3)
+proxy_btn_HPOUT1L_3.setAcceptDrops(True)
+scene.addItem(proxy_btn_HPOUT1L_3)
+
+proxy_btn_HPOUT1L_4 = ProxyWidget() 
+proxy_btn_HPOUT1L_4.setWidget(btn_HPOUT1L_4)
+proxy_btn_HPOUT1L_4.setAcceptDrops(True)
+scene.addItem(proxy_btn_HPOUT1L_4)
+
+proxy_btn_HPOUT1R_1 = ProxyWidget() 
+proxy_btn_HPOUT1R_1.setWidget(btn_HPOUT1R_1)
+proxy_btn_HPOUT1R_1.setAcceptDrops(True)
+scene.addItem(proxy_btn_HPOUT1R_1)
+
+proxy_btn_HPOUT1R_2 = ProxyWidget() 
+proxy_btn_HPOUT1R_2.setWidget(btn_HPOUT1R_2)
+proxy_btn_HPOUT1R_2.setAcceptDrops(True)
+scene.addItem(proxy_btn_HPOUT1R_2)
+
+proxy_btn_HPOUT1R_3 = ProxyWidget() 
+proxy_btn_HPOUT1R_3.setWidget(btn_HPOUT1R_3)
+proxy_btn_HPOUT1R_3.setAcceptDrops(True)
+scene.addItem(proxy_btn_HPOUT1R_3)
+
+proxy_btn_HPOUT1R_4 = ProxyWidget() 
+proxy_btn_HPOUT1R_4.setWidget(btn_HPOUT1R_4)
+proxy_btn_HPOUT1R_4.setAcceptDrops(True)
+scene.addItem(proxy_btn_HPOUT1R_4)
+
 
 def amixer_command(control, value):
     p = subprocess.Popen(["amixer", "-c0", "sset", control, value ], stdout=subprocess.PIPE)
@@ -1000,6 +1043,10 @@ def on_connect(self,  input):
 submenus_dic = collections.OrderedDict()
 submenus_dic['AIF1TX1_submenu'] = QMenu("AIF1TX1 (L) Record to RPi")
 submenus_dic['AIF1TX2_submenu'] = QMenu("AIF1TX2 (R) Record to RPi")
+submenus_dic['HPOUT1L_submenu'] = QMenu("HPOUT1 (L) Headset Output")
+submenus_dic['HPOUT1R_submenu'] = QMenu("HPOUT1 (R) Headset Output")
+submenus_dic['HPOUT2L_submenu'] = QMenu("HPOUT2 (L) Line Out")
+submenus_dic['HPOUT2R_submenu'] = QMenu("HPOUT2 (R) Line Out")
 
 #Create a actions ordered dictionary for Menu
 actions_dic = collections.OrderedDict()
@@ -1012,12 +1059,23 @@ for input   in inputs_dic:
 
     
     #Condition to add actions to a submenu
-    if input[:-2] == 'AIF1TX1' :
+    if input[:7] == 'AIF1TX1' :
         submenus_dic['AIF1TX1_submenu'].addAction( actions_dic[ input ] )
     
-    if input[:-2] == 'AIF1TX2' :
+    if input[:7] == 'AIF1TX2' :
         submenus_dic['AIF1TX2_submenu'].addAction( actions_dic[ input ] )
-        
+    
+    if input[:7] == 'HPOUT1L' :
+        submenus_dic['HPOUT1L_submenu'].addAction( actions_dic[ input ] )
+    
+    if input[:7] == 'HPOUT1R' :
+        submenus_dic['HPOUT1R_submenu'].addAction( actions_dic[ input ] )
+    
+    if input[:7] == 'HPOUT2L' :
+        submenus_dic['HPOUT2L_submenu'].addAction( actions_dic[ input ] )
+    
+    if input[:7] == 'HPOUT2R' :
+        submenus_dic['HPOUT2R_submenu'].addAction( actions_dic[ input ] )
     
     #Connect every input button to slot (on_link)
     inputs_dic[ input ].linked.connect( on_link )
