@@ -214,8 +214,10 @@ AIF1TX2_inputs_layout.setSizeConstraint(QtGui.QLayout.SetDefaultConstraint)
 #Wrap Playback/Record controls into a layout
 #record_playback_layouts = QHBoxLayout(widget_container)
 record_playback_layouts = QHBoxLayout()
+record_playback_layouts.addStretch(1)
 record_playback_layouts.addLayout(AIF1RX_main_layout)
 record_playback_layouts.addLayout(AIF1TX_main_layout)
+record_playback_layouts.addStretch(1)
 #widget_container.setFixedWidth(290)
 
 #                                               ////////////////// INPUT DEVICES ////////////////////////
@@ -562,6 +564,276 @@ Generators_layout.addLayout(NoiseGenerator_layout)
 
 #                                                            //////////////// OUTPUT DEVICES ////////////////
 #                                                                       //// Headset (HPOUT1) ////
+btn_HPOUT1L_1 = DragButton()
+btn_HPOUT1L_1.setObjectName("btn_HPOUT1L_1")
+btn_HPOUT1L_1.setControlName("HPOUT1L Input 1")
+btn_HPOUT1L_1.setAllowDrag(False)
+btn_HPOUT1L_1.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_HPOUT1L_1.setIcon(icon)
+btn_HPOUT1L_1.setFixedWidth(16)
+inputs_dic['HPOUT1L Input 1'] = btn_HPOUT1L_1
+
+btn_HPOUT1L_2 = DragButton()
+btn_HPOUT1L_2.setObjectName("btn_HPOUT1L_2")
+btn_HPOUT1L_2.setControlName("HPOUT1L Input 2")
+btn_HPOUT1L_2.setAllowDrag(False)
+btn_HPOUT1L_2.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_HPOUT1L_2.setIcon(icon)
+btn_HPOUT1L_2.setFixedWidth(16)
+inputs_dic['HPOUT1L Input 2'] = btn_HPOUT1L_2
+
+btn_HPOUT1L_3 = DragButton()
+btn_HPOUT1L_3.setObjectName("btn_HPOUT1L_3")
+btn_HPOUT1L_3.setControlName("HPOUT1L Input 3")
+btn_HPOUT1L_3.setAllowDrag(False)
+btn_HPOUT1L_3.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_HPOUT1L_3.setIcon(icon)
+btn_HPOUT1L_3.setFixedWidth(16)
+inputs_dic['HPOUT1L Input 3'] = btn_HPOUT1L_3
+
+
+btn_HPOUT1L_4 = DragButton()
+btn_HPOUT1L_4.setObjectName("btn_HPOUT1L_4")
+btn_HPOUT1L_4.setControlName("HPOUT1L Input 4")
+btn_HPOUT1L_4.setAllowDrag(False)
+btn_HPOUT1L_4.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_HPOUT1L_4.setIcon(icon)
+btn_HPOUT1L_4.setFixedWidth(16)
+inputs_dic['HPOUT1L Input 4'] = btn_HPOUT1L_4
+
+btn_HPOUT1R_1 = DragButton()
+btn_HPOUT1R_1.setObjectName("btn_HPOUT1R_1")
+btn_HPOUT1R_1.setControlName("HPOUT1R Input 1")
+btn_HPOUT1R_1.setAllowDrag(False)
+btn_HPOUT1R_1.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_HPOUT1R_1.setIcon(icon)
+btn_HPOUT1R_1.setFixedWidth(16)
+inputs_dic['HPOUT1R Input 1'] = btn_HPOUT1R_1
+
+btn_HPOUT1R_2 = DragButton()
+btn_HPOUT1R_2.setObjectName("btn_HPOUT1R_2")
+btn_HPOUT1R_2.setControlName("HPOUT1R Input 2")
+btn_HPOUT1R_2.setAllowDrag(False)
+btn_HPOUT1R_2.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_HPOUT1R_2.setIcon(icon)
+btn_HPOUT1R_2.setFixedWidth(16)
+inputs_dic['HPOUT1R Input 2'] = btn_HPOUT1R_2
+
+
+btn_HPOUT1R_3 = DragButton()
+btn_HPOUT1R_3.setObjectName("btn_HPOUT1R_3")
+btn_HPOUT1R_3.setControlName("HPOUT1R Input 3")
+btn_HPOUT1R_3.setAllowDrag(False)
+btn_HPOUT1R_3.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_HPOUT1R_3.setIcon(icon)
+btn_HPOUT1R_3.setFixedWidth(16)
+inputs_dic['HPOUT1R Input 3'] = btn_HPOUT1R_3
+
+btn_HPOUT1R_4 = DragButton()
+btn_HPOUT1R_4.setObjectName("btn_HPOUT1R_4")
+btn_HPOUT1R_4.setControlName("HPOUT1R Input 4")
+btn_HPOUT1R_4.setAllowDrag(False)
+btn_HPOUT1R_4.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_HPOUT1R_4.setIcon(icon)
+btn_HPOUT1R_4.setFixedWidth(16)
+inputs_dic['HPOUT1R Input 4'] = btn_HPOUT1R_4
+
+#Labels and Icons
+lbl_HPOUT1L = QtGui.QLabel()
+lbl_HPOUT1L.setObjectName("lbl_HPOUT1L")
+lbl_HPOUT1R = QtGui.QLabel()
+lbl_HPOUT1R.setObjectName("lbl_HPOUT1R")
+lbl_HPOUT1L.setText("<html><head/><body><p><span style=\" font-weight:600;\"> HPOUT1 L</span></p></body></html>")
+lbl_HPOUT1R.setText("<html><head/><body><p><span style=\" font-weight:600;\"> HPOUT1 R</span></p></body></html>")
+lbl_HPOUT1 = QtGui.QLabel()
+lbl_HPOUT1.setObjectName("lbl_HPOUT1")
+lbl_HPOUT1.setText("<html><head/><body><p><img src=\":/Headset_output.png\"/></p><p><span style=\" font-weight:600;\"> Headset output </p><p>(HPOUT1) </span></p></body></html>")
+
+#Layouts
+HPOUT1L_connectors_layout = QVBoxLayout()
+#HPOUT1L_connectors_layout.addStretch(1)
+HPOUT1L_connectors_layout.addWidget(btn_HPOUT1L_1)
+HPOUT1L_connectors_layout.addWidget(btn_HPOUT1L_2)
+HPOUT1L_connectors_layout.addWidget(btn_HPOUT1L_3)
+HPOUT1L_connectors_layout.addWidget(btn_HPOUT1L_4)
+#HPOUT1L_connectors_layout.addStretch(1)
+
+HPOUT1L_layout = QHBoxLayout()
+HPOUT1L_layout.addLayout(HPOUT1L_connectors_layout)
+HPOUT1L_layout.addWidget(lbl_HPOUT1L)
+
+HPOUT1R_connectors_layout = QVBoxLayout()
+#HPOUT1R_connectors_layout.addStretch(1)
+HPOUT1R_connectors_layout.addWidget(btn_HPOUT1R_1)
+HPOUT1R_connectors_layout.addWidget(btn_HPOUT1R_2)
+HPOUT1R_connectors_layout.addWidget(btn_HPOUT1R_3)
+HPOUT1R_connectors_layout.addWidget(btn_HPOUT1R_4)
+#HPOUT1R_connectors_layout.addStretch(1)
+
+HPOUT1R_layout = QHBoxLayout()
+HPOUT1R_layout.addLayout(HPOUT1R_connectors_layout)
+HPOUT1R_layout.addWidget(lbl_HPOUT1R)
+
+HPOUT1_layout = QVBoxLayout()
+HPOUT1_layout.addLayout(HPOUT1L_layout)
+HPOUT1_layout.addLayout(HPOUT1R_layout)
+
+Headset_layout = QHBoxLayout()
+Headset_layout.addLayout(HPOUT1_layout)
+Headset_layout.addWidget(lbl_HPOUT1)
+
+
+#                                                                       //// LINE OUT (HPOUT2) ////
+btn_HPOUT2L_1 = DragButton()
+btn_HPOUT2L_1.setObjectName("btn_HPOUT2L_1")
+btn_HPOUT2L_1.setControlName("HPOUT2L Input 1")
+btn_HPOUT2L_1.setAllowDrag(False)
+btn_HPOUT2L_1.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_HPOUT2L_1.setIcon(icon)
+btn_HPOUT2L_1.setFixedWidth(16)
+inputs_dic['HPOUT2L Input 1'] = btn_HPOUT2L_1
+
+btn_HPOUT2L_2 = DragButton()
+btn_HPOUT2L_2.setObjectName("btn_HPOUT2L_2")
+btn_HPOUT2L_2.setControlName("HPOUT2L Input 2")
+btn_HPOUT2L_2.setAllowDrag(False)
+btn_HPOUT2L_2.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_HPOUT2L_2.setIcon(icon)
+btn_HPOUT2L_2.setFixedWidth(16)
+inputs_dic['HPOUT2L Input 2'] = btn_HPOUT2L_2
+
+btn_HPOUT2L_3 = DragButton()
+btn_HPOUT2L_3.setObjectName("btn_HPOUT2L_3")
+btn_HPOUT2L_3.setControlName("HPOUT2L Input 3")
+btn_HPOUT2L_3.setAllowDrag(False)
+btn_HPOUT2L_3.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_HPOUT2L_3.setIcon(icon)
+btn_HPOUT2L_3.setFixedWidth(16)
+inputs_dic['HPOUT2L Input 3'] = btn_HPOUT2L_3
+
+
+btn_HPOUT2L_4 = DragButton()
+btn_HPOUT2L_4.setObjectName("btn_HPOUT2L_4")
+btn_HPOUT2L_4.setControlName("HPOUT2L Input 4")
+btn_HPOUT2L_4.setAllowDrag(False)
+btn_HPOUT2L_4.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_HPOUT2L_4.setIcon(icon)
+btn_HPOUT2L_4.setFixedWidth(16)
+inputs_dic['HPOUT2L Input 4'] = btn_HPOUT2L_4
+
+btn_HPOUT2R_1 = DragButton()
+btn_HPOUT2R_1.setObjectName("btn_HPOUT2R_1")
+btn_HPOUT2R_1.setControlName("HPOUT2R Input 1")
+btn_HPOUT2R_1.setAllowDrag(False)
+btn_HPOUT2R_1.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_HPOUT2R_1.setIcon(icon)
+btn_HPOUT2R_1.setFixedWidth(16)
+inputs_dic['HPOUT2R Input 1'] = btn_HPOUT2R_1
+
+btn_HPOUT2R_2 = DragButton()
+btn_HPOUT2R_2.setObjectName("btn_HPOUT2R_2")
+btn_HPOUT2R_2.setControlName("HPOUT2R Input 2")
+btn_HPOUT2R_2.setAllowDrag(False)
+btn_HPOUT2R_2.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_HPOUT2R_2.setIcon(icon)
+btn_HPOUT2R_2.setFixedWidth(16)
+inputs_dic['HPOUT2R Input 2'] = btn_HPOUT2R_2
+
+
+btn_HPOUT2R_3 = DragButton()
+btn_HPOUT2R_3.setObjectName("btn_HPOUT2R_3")
+btn_HPOUT2R_3.setControlName("HPOUT2R Input 3")
+btn_HPOUT2R_3.setAllowDrag(False)
+btn_HPOUT2R_3.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_HPOUT2R_3.setIcon(icon)
+btn_HPOUT2R_3.setFixedWidth(16)
+inputs_dic['HPOUT2R Input 3'] = btn_HPOUT2R_3
+
+btn_HPOUT2R_4 = DragButton()
+btn_HPOUT2R_4.setObjectName("btn_HPOUT2R_4")
+btn_HPOUT2R_4.setControlName("HPOUT2R Input 4")
+btn_HPOUT2R_4.setAllowDrag(False)
+btn_HPOUT2R_4.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_HPOUT2R_4.setIcon(icon)
+btn_HPOUT2R_4.setFixedWidth(16)
+inputs_dic['HPOUT2R Input 4'] = btn_HPOUT2R_4
+
+#Labels and Icons
+lbl_HPOUT2L = QtGui.QLabel()
+lbl_HPOUT2L.setObjectName("lbl_HPOUT2L")
+lbl_HPOUT2R = QtGui.QLabel()
+lbl_HPOUT2R.setObjectName("lbl_HPOUT2R")
+lbl_HPOUT2L.setText("<html><head/><body><p><span style=\" font-weight:600;\"> HPOUT2 L</span></p></body></html>")
+lbl_HPOUT2R.setText("<html><head/><body><p><span style=\" font-weight:600;\"> HPOUT2 R</span></p></body></html>")
+lbl_HPOUT2 = QtGui.QLabel()
+lbl_HPOUT2.setObjectName("lbl_HPOUT2")
+lbl_HPOUT2.setText("<html><head/><body><p><img src=\":/Line_Out.png\"/></p><p><span style=\" font-weight:600;\"> Line Out </p><p>(HPOUT2) </span></p></body></html>")
+
+#Layouts
+HPOUT2L_connectors_layout = QVBoxLayout()
+#HPOUT2L_connectors_layout.addStretch(1)
+HPOUT2L_connectors_layout.addWidget(btn_HPOUT2L_1)
+HPOUT2L_connectors_layout.addWidget(btn_HPOUT2L_2)
+HPOUT2L_connectors_layout.addWidget(btn_HPOUT2L_3)
+HPOUT2L_connectors_layout.addWidget(btn_HPOUT2L_4)
+#HPOUT2L_connectors_layout.addStretch(1)
+
+HPOUT2L_layout = QHBoxLayout()
+HPOUT2L_layout.addLayout(HPOUT2L_connectors_layout)
+HPOUT2L_layout.addWidget(lbl_HPOUT2L)
+
+HPOUT2R_connectors_layout = QVBoxLayout()
+#HPOUT2R_connectors_layout.addStretch(1)
+HPOUT2R_connectors_layout.addWidget(btn_HPOUT2R_1)
+HPOUT2R_connectors_layout.addWidget(btn_HPOUT2R_2)
+HPOUT2R_connectors_layout.addWidget(btn_HPOUT2R_3)
+HPOUT2R_connectors_layout.addWidget(btn_HPOUT2R_4)
+#HPOUT2R_connectors_layout.addStretch(1)
+
+HPOUT2R_layout = QHBoxLayout()
+HPOUT2R_layout.addLayout(HPOUT2R_connectors_layout)
+HPOUT2R_layout.addWidget(lbl_HPOUT2R)
+
+HPOUT2_layout = QVBoxLayout()
+HPOUT2_layout.addLayout(HPOUT2L_layout)
+HPOUT2_layout.addLayout(HPOUT2R_layout)
+
+LineOut_layout = QHBoxLayout()
+LineOut_layout.addLayout(HPOUT2_layout)
+LineOut_layout.addWidget(lbl_HPOUT2)
+
 
 
 
@@ -581,6 +853,8 @@ In_layouts.addLayout(Generators_layout)
 Out_layouts = QVBoxLayout()
 lbl_out = QLabel("Out Devices")
 Out_layouts.addWidget(lbl_out)
+Out_layouts.addLayout(Headset_layout)
+Out_layouts.addLayout(LineOut_layout)
 
 #                                                                       ///Filters Layouts///
 #TODO: Implement Filters
