@@ -573,7 +573,7 @@ icon = QIcon()
 icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
 btn_HPOUT1L_1.setIcon(icon)
 btn_HPOUT1L_1.setFixedWidth(16)
-inputs_dic['HPOUT1L Input 1'] = btn_HPOUT1L_1
+inputs_dic['HPOUT1L_1'] = btn_HPOUT1L_1
 
 btn_HPOUT1L_2 = DragButton()
 btn_HPOUT1L_2.setObjectName("btn_HPOUT1L_2")
@@ -584,7 +584,7 @@ icon = QIcon()
 icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
 btn_HPOUT1L_2.setIcon(icon)
 btn_HPOUT1L_2.setFixedWidth(16)
-inputs_dic['HPOUT1L Input 2'] = btn_HPOUT1L_2
+inputs_dic['HPOUT1L_2'] = btn_HPOUT1L_2
 
 btn_HPOUT1L_3 = DragButton()
 btn_HPOUT1L_3.setObjectName("btn_HPOUT1L_3")
@@ -595,7 +595,7 @@ icon = QIcon()
 icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
 btn_HPOUT1L_3.setIcon(icon)
 btn_HPOUT1L_3.setFixedWidth(16)
-inputs_dic['HPOUT1L Input 3'] = btn_HPOUT1L_3
+inputs_dic['HPOUT1L_3'] = btn_HPOUT1L_3
 
 
 btn_HPOUT1L_4 = DragButton()
@@ -607,7 +607,7 @@ icon = QIcon()
 icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
 btn_HPOUT1L_4.setIcon(icon)
 btn_HPOUT1L_4.setFixedWidth(16)
-inputs_dic['HPOUT1L Input 4'] = btn_HPOUT1L_4
+inputs_dic['HPOUT1L_4'] = btn_HPOUT1L_4
 
 btn_HPOUT1R_1 = DragButton()
 btn_HPOUT1R_1.setObjectName("btn_HPOUT1R_1")
@@ -618,7 +618,7 @@ icon = QIcon()
 icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
 btn_HPOUT1R_1.setIcon(icon)
 btn_HPOUT1R_1.setFixedWidth(16)
-inputs_dic['HPOUT1R Input 1'] = btn_HPOUT1R_1
+inputs_dic['HPOUT1R_1'] = btn_HPOUT1R_1
 
 btn_HPOUT1R_2 = DragButton()
 btn_HPOUT1R_2.setObjectName("btn_HPOUT1R_2")
@@ -629,7 +629,7 @@ icon = QIcon()
 icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
 btn_HPOUT1R_2.setIcon(icon)
 btn_HPOUT1R_2.setFixedWidth(16)
-inputs_dic['HPOUT1R Input 2'] = btn_HPOUT1R_2
+inputs_dic['HPOUT1R_2'] = btn_HPOUT1R_2
 
 
 btn_HPOUT1R_3 = DragButton()
@@ -641,7 +641,7 @@ icon = QIcon()
 icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
 btn_HPOUT1R_3.setIcon(icon)
 btn_HPOUT1R_3.setFixedWidth(16)
-inputs_dic['HPOUT1R Input 3'] = btn_HPOUT1R_3
+inputs_dic['HPOUT1R_3'] = btn_HPOUT1R_3
 
 btn_HPOUT1R_4 = DragButton()
 btn_HPOUT1R_4.setObjectName("btn_HPOUT1R_4")
@@ -652,7 +652,7 @@ icon = QIcon()
 icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
 btn_HPOUT1R_4.setIcon(icon)
 btn_HPOUT1R_4.setFixedWidth(16)
-inputs_dic['HPOUT1R Input 4'] = btn_HPOUT1R_4
+inputs_dic['HPOUT1R_4'] = btn_HPOUT1R_4
 
 #Labels and Icons
 lbl_HPOUT1L = QtGui.QLabel()
@@ -709,7 +709,7 @@ icon = QIcon()
 icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
 btn_HPOUT2L_1.setIcon(icon)
 btn_HPOUT2L_1.setFixedWidth(16)
-inputs_dic['HPOUT2L Input 1'] = btn_HPOUT2L_1
+inputs_dic['HPOUT2L_1'] = btn_HPOUT2L_1
 
 btn_HPOUT2L_2 = DragButton()
 btn_HPOUT2L_2.setObjectName("btn_HPOUT2L_2")
@@ -720,7 +720,7 @@ icon = QIcon()
 icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
 btn_HPOUT2L_2.setIcon(icon)
 btn_HPOUT2L_2.setFixedWidth(16)
-inputs_dic['HPOUT2L Input 2'] = btn_HPOUT2L_2
+inputs_dic['HPOUT2L_2'] = btn_HPOUT2L_2
 
 btn_HPOUT2L_3 = DragButton()
 btn_HPOUT2L_3.setObjectName("btn_HPOUT2L_3")
@@ -731,7 +731,7 @@ icon = QIcon()
 icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
 btn_HPOUT2L_3.setIcon(icon)
 btn_HPOUT2L_3.setFixedWidth(16)
-inputs_dic['HPOUT2L Input 3'] = btn_HPOUT2L_3
+inputs_dic['HPOUT2L_3'] = btn_HPOUT2L_3
 
 
 btn_HPOUT2L_4 = DragButton()
@@ -743,7 +743,7 @@ icon = QIcon()
 icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
 btn_HPOUT2L_4.setIcon(icon)
 btn_HPOUT2L_4.setFixedWidth(16)
-inputs_dic['HPOUT2L Input 4'] = btn_HPOUT2L_4
+inputs_dic['HPOUT2L_4'] = btn_HPOUT2L_4
 
 btn_HPOUT2R_1 = DragButton()
 btn_HPOUT2R_1.setObjectName("btn_HPOUT2R_1")
@@ -754,7 +754,7 @@ icon = QIcon()
 icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
 btn_HPOUT2R_1.setIcon(icon)
 btn_HPOUT2R_1.setFixedWidth(16)
-inputs_dic['HPOUT2R Input 1'] = btn_HPOUT2R_1
+inputs_dic['HPOUT2R_1'] = btn_HPOUT2R_1
 
 btn_HPOUT2R_2 = DragButton()
 btn_HPOUT2R_2.setObjectName("btn_HPOUT2R_2")
@@ -765,7 +765,7 @@ icon = QIcon()
 icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
 btn_HPOUT2R_2.setIcon(icon)
 btn_HPOUT2R_2.setFixedWidth(16)
-inputs_dic['HPOUT2R Input 2'] = btn_HPOUT2R_2
+inputs_dic['HPOUT2R_2'] = btn_HPOUT2R_2
 
 
 btn_HPOUT2R_3 = DragButton()
@@ -777,7 +777,7 @@ icon = QIcon()
 icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
 btn_HPOUT2R_3.setIcon(icon)
 btn_HPOUT2R_3.setFixedWidth(16)
-inputs_dic['HPOUT2R Input 3'] = btn_HPOUT2R_3
+inputs_dic['HPOUT2R_3'] = btn_HPOUT2R_3
 
 btn_HPOUT2R_4 = DragButton()
 btn_HPOUT2R_4.setObjectName("btn_HPOUT2R_4")
@@ -788,7 +788,7 @@ icon = QIcon()
 icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
 btn_HPOUT2R_4.setIcon(icon)
 btn_HPOUT2R_4.setFixedWidth(16)
-inputs_dic['HPOUT2R Input 4'] = btn_HPOUT2R_4
+inputs_dic['HPOUT2R_4'] = btn_HPOUT2R_4
 
 #Labels and Icons
 lbl_HPOUT2L = QtGui.QLabel()
