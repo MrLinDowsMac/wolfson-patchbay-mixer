@@ -803,24 +803,25 @@ lbl_HPOUT2.setText("<html><head/><body><p><img src=\":/Line_Out.png\"/></p><p><s
 
 #Layouts
 HPOUT2L_connectors_layout = QVBoxLayout()
-#HPOUT2L_connectors_layout.addStretch(1)
+HPOUT2L_connectors_layout.addStretch(4)
 HPOUT2L_connectors_layout.addWidget(btn_HPOUT2L_1)
 HPOUT2L_connectors_layout.addWidget(btn_HPOUT2L_2)
 HPOUT2L_connectors_layout.addWidget(btn_HPOUT2L_3)
 HPOUT2L_connectors_layout.addWidget(btn_HPOUT2L_4)
-#HPOUT2L_connectors_layout.addStretch(1)
+HPOUT2L_connectors_layout.addStretch(4)
 
 HPOUT2L_layout = QHBoxLayout()
 HPOUT2L_layout.addLayout(HPOUT2L_connectors_layout)
 HPOUT2L_layout.addWidget(lbl_HPOUT2L)
 
 HPOUT2R_connectors_layout = QVBoxLayout()
-#HPOUT2R_connectors_layout.addStretch(1)
+HPOUT2R_connectors_layout.addStretch(5)
 HPOUT2R_connectors_layout.addWidget(btn_HPOUT2R_1)
 HPOUT2R_connectors_layout.addWidget(btn_HPOUT2R_2)
 HPOUT2R_connectors_layout.addWidget(btn_HPOUT2R_3)
 HPOUT2R_connectors_layout.addWidget(btn_HPOUT2R_4)
-#HPOUT2R_connectors_layout.addStretch(1)
+HPOUT2R_connectors_layout.addStretch(5)
+
 
 HPOUT2R_layout = QHBoxLayout()
 HPOUT2R_layout.addLayout(HPOUT2R_connectors_layout)
@@ -958,6 +959,46 @@ proxy_btn_HPOUT1R_4.setWidget(btn_HPOUT1R_4)
 proxy_btn_HPOUT1R_4.setAcceptDrops(True)
 scene.addItem(proxy_btn_HPOUT1R_4)
 
+#                // Proxy Widgets for HPOUT1 //
+proxy_btn_HPOUT2L_1 = ProxyWidget() 
+proxy_btn_HPOUT2L_1.setWidget(btn_HPOUT2L_1)
+proxy_btn_HPOUT2L_1.setAcceptDrops(True)
+scene.addItem(proxy_btn_HPOUT2L_1)
+
+proxy_btn_HPOUT2L_2 = ProxyWidget() 
+proxy_btn_HPOUT2L_2.setWidget(btn_HPOUT2L_2)
+proxy_btn_HPOUT2L_2.setAcceptDrops(True)
+scene.addItem(proxy_btn_HPOUT2L_2)
+
+proxy_btn_HPOUT2L_3 = ProxyWidget() 
+proxy_btn_HPOUT2L_3.setWidget(btn_HPOUT2L_3)
+proxy_btn_HPOUT2L_3.setAcceptDrops(True)
+scene.addItem(proxy_btn_HPOUT2L_3)
+
+proxy_btn_HPOUT2L_4 = ProxyWidget() 
+proxy_btn_HPOUT2L_4.setWidget(btn_HPOUT2L_4)
+proxy_btn_HPOUT2L_4.setAcceptDrops(True)
+scene.addItem(proxy_btn_HPOUT2L_4)
+
+proxy_btn_HPOUT2R_1 = ProxyWidget() 
+proxy_btn_HPOUT2R_1.setWidget(btn_HPOUT2R_1)
+proxy_btn_HPOUT2R_1.setAcceptDrops(True)
+scene.addItem(proxy_btn_HPOUT2R_1)
+
+proxy_btn_HPOUT2R_2 = ProxyWidget() 
+proxy_btn_HPOUT2R_2.setWidget(btn_HPOUT2R_2)
+proxy_btn_HPOUT2R_2.setAcceptDrops(True)
+scene.addItem(proxy_btn_HPOUT2R_2)
+
+proxy_btn_HPOUT2R_3 = ProxyWidget() 
+proxy_btn_HPOUT2R_3.setWidget(btn_HPOUT2R_3)
+proxy_btn_HPOUT2R_3.setAcceptDrops(True)
+scene.addItem(proxy_btn_HPOUT2R_3)
+
+proxy_btn_HPOUT2R_4 = ProxyWidget() 
+proxy_btn_HPOUT2R_4.setWidget(btn_HPOUT2R_4)
+proxy_btn_HPOUT2R_4.setAcceptDrops(True)
+scene.addItem(proxy_btn_HPOUT2R_4)
 
 def amixer_command(control, value):
     p = subprocess.Popen(["amixer", "-c0", "sset", control, value ], stdout=subprocess.PIPE)
