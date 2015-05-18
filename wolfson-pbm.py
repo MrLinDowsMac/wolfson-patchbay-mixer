@@ -1205,7 +1205,7 @@ proxy_btn_AIF2TX2_3.setAcceptDrops(True)
 scene.addItem(proxy_btn_AIF2TX2_3)
 
 proxy_btn_AIF2TX2_4 = ProxyWidget() 
-proxy_btn_AIF2TX2_4.setWidget(btn_AIF1TX2_4)
+proxy_btn_AIF2TX2_4.setWidget(btn_AIF2TX2_4)
 proxy_btn_AIF2TX2_4.setAcceptDrops(True)
 scene.addItem(proxy_btn_AIF2TX2_4)
 
