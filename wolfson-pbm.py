@@ -1168,6 +1168,47 @@ proxy_btn_HPOUT2R_4.setWidget(btn_HPOUT2R_4)
 proxy_btn_HPOUT2R_4.setAcceptDrops(True)
 scene.addItem(proxy_btn_HPOUT2R_4)
 
+#                       // Proxy Widgets for AIF2TX1 //
+proxy_btn_AIF2TX1_1 = ProxyWidget() 
+proxy_btn_AIF2TX1_1.setWidget(btn_AIF2TX1_1)
+proxy_btn_AIF2TX1_1.setAcceptDrops(True)
+scene.addItem(proxy_btn_AIF2TX1_1)
+
+proxy_btn_AIF2TX1_2 = ProxyWidget() 
+proxy_btn_AIF2TX1_2.setWidget(btn_AIF2TX1_2)
+proxy_btn_AIF2TX1_2.setAcceptDrops(True)
+scene.addItem(proxy_btn_AIF2TX1_2)
+
+proxy_btn_AIF2TX1_3 = ProxyWidget() 
+proxy_btn_AIF2TX1_3.setWidget(btn_AIF2TX1_3)
+proxy_btn_AIF2TX1_3.setAcceptDrops(True)
+scene.addItem(proxy_btn_AIF2TX1_3)
+
+proxy_btn_AIF2TX1_4 = ProxyWidget() 
+proxy_btn_AIF2TX1_4.setWidget(btn_AIF2TX1_4)
+proxy_btn_AIF2TX1_4.setAcceptDrops(True)
+scene.addItem(proxy_btn_AIF2TX1_4)
+#                    // Proxy Widgets for AIF1TX2  //
+proxy_btn_AIF2TX2_1 = ProxyWidget() 
+proxy_btn_AIF2TX2_1.setWidget(btn_AIF2TX2_1)
+proxy_btn_AIF2TX2_1.setAcceptDrops(True)
+scene.addItem(proxy_btn_AIF2TX2_1)
+
+proxy_btn_AIF2TX2_2 = ProxyWidget() 
+proxy_btn_AIF2TX2_2.setWidget(btn_AIF2TX2_2)
+proxy_btn_AIF2TX2_2.setAcceptDrops(True)
+scene.addItem(proxy_btn_AIF2TX2_2)
+
+proxy_btn_AIF2TX2_3 = ProxyWidget() 
+proxy_btn_AIF2TX2_3.setWidget(btn_AIF2TX2_3)
+proxy_btn_AIF2TX2_3.setAcceptDrops(True)
+scene.addItem(proxy_btn_AIF2TX2_3)
+
+proxy_btn_AIF2TX2_4 = ProxyWidget() 
+proxy_btn_AIF2TX2_4.setWidget(btn_AIF1TX2_4)
+proxy_btn_AIF2TX2_4.setAcceptDrops(True)
+scene.addItem(proxy_btn_AIF2TX2_4)
+
 def amixer_command(control, value):
     p = subprocess.Popen(["amixer", "-c0", "sset", control, value ], stdout=subprocess.PIPE)
     p.communicate()
