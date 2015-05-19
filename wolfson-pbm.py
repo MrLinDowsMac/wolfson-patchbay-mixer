@@ -1525,6 +1525,8 @@ submenus_dic['HPOUT2L_submenu'] = QMenu("HPOUT2 (L) Line Out")
 submenus_dic['HPOUT2R_submenu'] = QMenu("HPOUT2 (R) Line Out")
 submenus_dic['AIF2TX1_submenu'] = QMenu("SPDIF OUT (L)")
 submenus_dic['AIF2TX2_submenu'] = QMenu("SPDIF OUT (R)")
+submenus_dic['DRC1L_submenu'] = QMenu("Dynamic Range Controller 1 (L)")
+submenus_dic['DRC1R_submenu'] = QMenu("Dynamic Range Controller 1 (R)")
 
 
 #Create a actions ordered dictionary for Menu
@@ -1561,6 +1563,12 @@ for input   in inputs_dic:
     
     if input[:7] == 'AIF2TX2' :
         submenus_dic['AIF2TX2_submenu'].addAction( actions_dic[ input ] )
+    
+    if input[:5] == 'DRC1L' :
+        submenus_dic['DRC1L_submenu'].addAction( actions_dic[ input ] )
+    
+    if input[:5] == 'DRC1R' :
+        submenus_dic['DRC1R_submenu'].addAction( actions_dic[ input ] )
     
     #Connect every input button to slot (on_link)
     inputs_dic[ input ].linked.connect( on_link )
