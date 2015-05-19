@@ -1002,6 +1002,186 @@ SPDIFOUT_layout = QHBoxLayout()
 SPDIFOUT_layout.addLayout(AIF2TX_layout)
 SPDIFOUT_layout.addWidget(lbl_AIF2TX)
 
+#                                                            //////////////// OUTPUT DEVICES ////////////////
+#                                                              /// Dynamic Range Controller 1 (DRC1)
+
+btn_DRC1L_1 = DragButton()
+btn_DRC1L_1.setObjectName("btn_DRC1L_1")
+btn_DRC1L_1.setControlName("DRC1L Input 1")
+btn_DRC1L_1.setAllowDrag(False)
+btn_DRC1L_1.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_DRC1L_1.setIcon(icon)
+btn_DRC1L_1.setFixedWidth(16)
+btn_DRC1L_1.setFixedHeight(16)
+inputs_dic['DRC1L_1'] = btn_DRC1L_1
+
+btn_DRC1L_2 = DragButton()
+btn_DRC1L_2.setObjectName("btn_DRC1L_2")
+btn_DRC1L_2.setControlName("DRC1L Input 2")
+btn_DRC1L_2.setAllowDrag(False)
+btn_DRC1L_2.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_DRC1L_2.setIcon(icon)
+btn_DRC1L_2.setFixedWidth(16)
+btn_DRC1L_2.setFixedHeight(16)
+inputs_dic['DRC1L_2'] = btn_DRC1L_2
+
+btn_DRC1L_3 = DragButton()
+btn_DRC1L_3.setObjectName("btn_DRC1L_3")
+btn_DRC1L_3.setControlName("DRC1L Input 3")
+btn_DRC1L_3.setAllowDrag(False)
+btn_DRC1L_3.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_DRC1L_3.setIcon(icon)
+btn_DRC1L_3.setFixedWidth(16)
+btn_DRC1L_3.setFixedHeight(16)
+inputs_dic['DRC1L_3'] = btn_DRC1L_3
+
+
+btn_DRC1L_4 = DragButton()
+btn_DRC1L_4.setObjectName("btn_DRC1L_4")
+btn_DRC1L_4.setControlName("DRC1L Input 4")
+btn_DRC1L_4.setAllowDrag(False)
+btn_DRC1L_4.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_DRC1L_4.setIcon(icon)
+btn_DRC1L_4.setFixedWidth(16)
+btn_DRC1L_4.setFixedHeight(16)
+inputs_dic['DRC1L_4'] = btn_DRC1L_4
+
+btn_DRC1R_1 = DragButton()
+btn_DRC1R_1.setObjectName("btn_DRC1R_1")
+btn_DRC1R_1.setControlName("DRC1R Input 1")
+btn_DRC1R_1.setAllowDrag(False)
+btn_DRC1R_1.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_DRC1R_1.setIcon(icon)
+btn_DRC1R_1.setFixedWidth(16)
+btn_DRC1R_1.setFixedHeight(16)
+inputs_dic['DRC1R_1'] = btn_DRC1R_1
+
+btn_DRC1R_2 = DragButton()
+btn_DRC1R_2.setObjectName("btn_DRC1R_2")
+btn_DRC1R_2.setControlName("DRC1R Input 2")
+btn_DRC1R_2.setAllowDrag(False)
+btn_DRC1R_2.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_DRC1R_2.setIcon(icon)
+btn_DRC1R_2.setFixedWidth(16)
+btn_DRC1R_2.setFixedHeight(16)
+inputs_dic['DRC1R_2'] = btn_DRC1R_2
+
+
+btn_DRC1R_3 = DragButton()
+btn_DRC1R_3.setObjectName("btn_DRC1R_3")
+btn_DRC1R_3.setControlName("DRC1R Input 3")
+btn_DRC1R_3.setAllowDrag(False)
+btn_DRC1R_3.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_DRC1R_3.setIcon(icon)
+btn_DRC1R_3.setFixedWidth(16)
+btn_DRC1R_3.setFixedHeight(16)
+inputs_dic['DRC1R_3'] = btn_DRC1R_3
+
+btn_DRC1R_4 = DragButton()
+btn_DRC1R_4.setObjectName("btn_DRC1R_4")
+btn_DRC1R_4.setControlName("DRC1R Input 4")
+btn_DRC1R_4.setAllowDrag(False)
+btn_DRC1R_4.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_DRC1R_4.setIcon(icon)
+btn_DRC1R_4.setFixedWidth(16)
+btn_DRC1R_4.setFixedHeight(16)
+inputs_dic['DRC1R_4'] = btn_DRC1R_4
+
+#Jack connectors
+btn_DRC1L = DragButton()
+btn_DRC1L.setObjectName("btn_DRC1L")
+btn_DRC1L.setControlName("DRC1L")
+btn_DRC1L.setAllowDrag(True) #Allow Drag n Drop of DragButton
+btn_DRC1L.setAcceptDrops(False)
+btn_DRC1L.setGeometry(QRect(-100, 50, 51, 31)) #Set dimensions of it
+#Set icon of button1
+icon = QIcon()
+icon.addPixmap(QPixmap(":/audio-input-line.png"), QIcon.Normal, QIcon.Off)
+btn_DRC1L.setIcon(icon)
+btn_DRC1L.setFlat(False)
+btn_DRC1L.setMenu(menu)
+jacks_dic['DRC1L'] = btn_DRC1L
+
+btn_DRC1R = DragButton()
+btn_DRC1R.setObjectName("btn_DRC1R")
+btn_DRC1R.setControlName("DRC1R")
+btn_DRC1R.setGeometry(QRect(200, -50, 51, 31)) #Set dimensions of it
+btn_DRC1R.setAllowDrag(True) #Allow Drag n Drop of DragButton
+btn_DRC1R.setAcceptDrops(False)
+#Set input line icon
+icon = QIcon()
+icon.addPixmap(QPixmap(":/audio-input-line.png"), QIcon.Normal, QIcon.Off)
+btn_DRC1R.setIcon(icon)
+btn_DRC1R.setFlat(False)
+btn_DRC1R.setMenu(menu)
+jacks_dic['DRC1R'] = btn_DRC1R
+
+#Labels and Icons
+lbl_DRC1L = QtGui.QLabel()
+lbl_DRC1L.setObjectName("lbl_DRC1L")
+lbl_DRC1R = QtGui.QLabel()
+lbl_DRC1R.setObjectName("lbl_DRC1R")
+lbl_DRC1L.setText("<html><head/><body><p><span style=\" font-weight:600;\"> DRC 1 L</span></p></body></html>")
+lbl_DRC1R.setText("<html><head/><body><p><span style=\" font-weight:600;\"> DRC 1 R</span></p></body></html>")
+lbl_DRC1 = QtGui.QLabel()
+lbl_DRC1.setObjectName("lbl_DRC")
+lbl_DRC1.setText("<html><head/><body><p><span style=\" font-weight:600;\"> Dynamic Range Controller 1</p><p>(DRC 1) </span></p></body></html>")
+
+#Layouts
+DRC1L_connectors_layout = QVBoxLayout()
+DRC1L_connectors_layout.addStretch(4)
+DRC1L_connectors_layout.addWidget(btn_DRC1L_1)
+DRC1L_connectors_layout.addWidget(btn_DRC1L_2)
+DRC1L_connectors_layout.addWidget(btn_DRC1L_3)
+DRC1L_connectors_layout.addWidget(btn_DRC1L_4)
+DRC1L_connectors_layout.addStretch(4)
+
+DRC1L_layout = QHBoxLayout()
+DRC1L_layout.addLayout(DRC1L_connectors_layout)
+DRC1L_layout.addWidget(lbl_DRC1L)
+DRC1L_layout.addWidget(btn_DRC1L)
+
+
+DRC1R_connectors_layout = QVBoxLayout()
+DRC1R_connectors_layout.addStretch(5)
+DRC1R_connectors_layout.addWidget(btn_DRC1R_1)
+DRC1R_connectors_layout.addWidget(btn_DRC1R_2)
+DRC1R_connectors_layout.addWidget(btn_DRC1R_3)
+DRC1R_connectors_layout.addWidget(btn_DRC1R_4)
+DRC1R_connectors_layout.addStretch(5)
+
+DRC1R_layout = QHBoxLayout()
+DRC1R_layout.addLayout(DRC1R_connectors_layout)
+DRC1R_layout.addWidget(lbl_DRC1R)
+DRC1R_layout.addWidget(btn_DRC1R)
+
+
+DRC1_layout = QVBoxLayout()
+DRC1_layout.addStretch(1)
+DRC1_layout.addLayout(DRC1L_layout)
+DRC1_layout.addLayout(DRC1R_layout)
+DRC1_layout.addStretch(1)
+
+DRC_layout = QVBoxLayout()
+DRC_layout.addWidget(lbl_DRC1)
+DRC_layout.addLayout(DRC1_layout)
+
 
 
 #                                                                        ////  In Devices Layouts  ////
@@ -1026,13 +1206,18 @@ Out_layouts.addLayout(SPDIFOUT_layout)
 Out_layouts.addStretch(1)
 
 #                                                                       ///Filters Layouts///
-#TODO: Implement Filters
+
+Filters_layouts = QVBoxLayout()
+lbl_filters = QLabel("Filters")
+Filters_layouts.addWidget(lbl_filters)
+Filters_layouts.addLayout(DRC_layout)
+Filters_layouts.addStretch(1)
 
 
 #IN/FILTERS/OUT Layout
 In_filters_out_layout = QHBoxLayout()
 In_filters_out_layout.addLayout(In_layouts)
-#In this line should be the filters layout
+In_filters_out_layout.addLayout(Filters_layouts)
 In_filters_out_layout.addLayout(Out_layouts)
 
 #Fits all the layouts here
@@ -1209,6 +1394,47 @@ proxy_btn_AIF2TX2_4.setWidget(btn_AIF2TX2_4)
 proxy_btn_AIF2TX2_4.setAcceptDrops(True)
 scene.addItem(proxy_btn_AIF2TX2_4)
 
+#                       // Proxy Widgets for DRC 1 L //
+proxy_btn_DRC1L_1 = ProxyWidget() 
+proxy_btn_DRC1L_1.setWidget(btn_DRC1L_1)
+proxy_btn_DRC1L_1.setAcceptDrops(True)
+scene.addItem(proxy_btn_DRC1L_1)
+
+proxy_btn_DRC1L_2 = ProxyWidget() 
+proxy_btn_DRC1L_2.setWidget(btn_DRC1L_2)
+proxy_btn_DRC1L_2.setAcceptDrops(True)
+scene.addItem(proxy_btn_DRC1L_2)
+
+proxy_btn_DRC1L_3 = ProxyWidget() 
+proxy_btn_DRC1L_3.setWidget(btn_DRC1L_3)
+proxy_btn_DRC1L_3.setAcceptDrops(True)
+scene.addItem(proxy_btn_DRC1L_3)
+
+proxy_btn_DRC1L_4 = ProxyWidget() 
+proxy_btn_DRC1L_4.setWidget(btn_DRC1L_4)
+proxy_btn_DRC1L_4.setAcceptDrops(True)
+scene.addItem(proxy_btn_DRC1L_4)
+#                    // Proxy Widgets for DRC 1 R  //
+proxy_btn_DRC1R_1 = ProxyWidget() 
+proxy_btn_DRC1R_1.setWidget(btn_DRC1R_1)
+proxy_btn_DRC1R_1.setAcceptDrops(True)
+scene.addItem(proxy_btn_DRC1R_1)
+
+proxy_btn_DRC1R_2 = ProxyWidget() 
+proxy_btn_DRC1R_2.setWidget(btn_DRC1R_2)
+proxy_btn_DRC1R_2.setAcceptDrops(True)
+scene.addItem(proxy_btn_DRC1R_2)
+
+proxy_btn_DRC1R_3 = ProxyWidget() 
+proxy_btn_DRC1R_3.setWidget(btn_DRC1R_3)
+proxy_btn_DRC1R_3.setAcceptDrops(True)
+scene.addItem(proxy_btn_DRC1R_3)
+
+proxy_btn_DRC1R_4 = ProxyWidget() 
+proxy_btn_DRC1R_4.setWidget(btn_DRC1R_4)
+proxy_btn_DRC1R_4.setAcceptDrops(True)
+scene.addItem(proxy_btn_DRC1R_4)
+
 def amixer_command(control, value):
     p = subprocess.Popen(["amixer", "-c0", "sset", control, value ], stdout=subprocess.PIPE)
     p.communicate()
@@ -1297,6 +1523,9 @@ submenus_dic['HPOUT1L_submenu'] = QMenu("HPOUT1 (L) Headset Output")
 submenus_dic['HPOUT1R_submenu'] = QMenu("HPOUT1 (R) Headset Output")
 submenus_dic['HPOUT2L_submenu'] = QMenu("HPOUT2 (L) Line Out")
 submenus_dic['HPOUT2R_submenu'] = QMenu("HPOUT2 (R) Line Out")
+submenus_dic['AIF2TX1_submenu'] = QMenu("SPDIF OUT (L)")
+submenus_dic['AIF2TX2_submenu'] = QMenu("SPDIF OUT (R)")
+
 
 #Create a actions ordered dictionary for Menu
 actions_dic = collections.OrderedDict()
@@ -1326,6 +1555,12 @@ for input   in inputs_dic:
     
     if input[:7] == 'HPOUT2R' :
         submenus_dic['HPOUT2R_submenu'].addAction( actions_dic[ input ] )
+    
+    if input[:7] == 'AIF2TX1' :
+        submenus_dic['AIF2TX1_submenu'].addAction( actions_dic[ input ] )
+    
+    if input[:7] == 'AIF2TX2' :
+        submenus_dic['AIF2TX2_submenu'].addAction( actions_dic[ input ] )
     
     #Connect every input button to slot (on_link)
     inputs_dic[ input ].linked.connect( on_link )
