@@ -1141,7 +1141,7 @@ lbl_DRC1L.setText("<html><head/><body><p><span style=\" font-weight:600;\"> DRC 
 lbl_DRC1R.setText("<html><head/><body><p><span style=\" font-weight:600;\"> DRC 1 R</span></p></body></html>")
 lbl_DRC1 = QtGui.QLabel()
 lbl_DRC1.setObjectName("lbl_DRC")
-lbl_DRC1.setText("<html><head/><body><p><span style=\" font-weight:600;\"> Dynamic Range Controller 1</p><p>(DRC 1) </span></p></body></html>")
+lbl_DRC1.setText("<html><head/><body><p><span style=\" font-weight:600;\"> Dynamic Range Controller 1</p></span></body></html>")
 
 #Layouts
 DRC1L_connectors_layout = QVBoxLayout()
@@ -1182,6 +1182,342 @@ DRC_layout = QVBoxLayout()
 DRC_layout.addWidget(lbl_DRC1)
 DRC_layout.addLayout(DRC1_layout)
 
+#                                                                   /// Low/High Pass Filter 1 (LHPF1)
+
+btn_LHPF1_1 = DragButton()
+btn_LHPF1_1.setObjectName("btn_LHPF1_1")
+btn_LHPF1_1.setControlName("LHPF1 Input 1")
+btn_LHPF1_1.setAllowDrag(False)
+btn_LHPF1_1.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF1_1.setIcon(icon)
+btn_LHPF1_1.setFixedWidth(16)
+btn_LHPF1_1.setFixedHeight(16)
+inputs_dic['LHPF1_1'] = btn_LHPF1_1
+
+btn_LHPF1_2 = DragButton()
+btn_LHPF1_2.setObjectName("btn_LHPF1_2")
+btn_LHPF1_2.setControlName("LHPF1 Input 2")
+btn_LHPF1_2.setAllowDrag(False)
+btn_LHPF1_2.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF1_2.setIcon(icon)
+btn_LHPF1_2.setFixedWidth(16)
+btn_LHPF1_2.setFixedHeight(16)
+inputs_dic['LHPF1_2'] = btn_LHPF1_2
+
+btn_LHPF1_3 = DragButton()
+btn_LHPF1_3.setObjectName("btn_LHPF1_3")
+btn_LHPF1_3.setControlName("LHPF1 Input 3")
+btn_LHPF1_3.setAllowDrag(False)
+btn_LHPF1_3.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF1_3.setIcon(icon)
+btn_LHPF1_3.setFixedWidth(16)
+btn_LHPF1_3.setFixedHeight(16)
+inputs_dic['LHPF1_3'] = btn_LHPF1_3
+
+
+btn_LHPF1_4 = DragButton()
+btn_LHPF1_4.setObjectName("btn_LHPF1_4")
+btn_LHPF1_4.setControlName("LHPF1 Input 4")
+btn_LHPF1_4.setAllowDrag(False)
+btn_LHPF1_4.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF1_4.setIcon(icon)
+btn_LHPF1_4.setFixedWidth(16)
+btn_LHPF1_4.setFixedHeight(16)
+inputs_dic['LHPF1_4'] = btn_LHPF1_4
+
+btn_LHPF2_1 = DragButton()
+btn_LHPF2_1.setObjectName("btn_LHPF2_1")
+btn_LHPF2_1.setControlName("LHPF2 Input 1")
+btn_LHPF2_1.setAllowDrag(False)
+btn_LHPF2_1.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF2_1.setIcon(icon)
+btn_LHPF2_1.setFixedWidth(16)
+btn_LHPF2_1.setFixedHeight(16)
+inputs_dic['LHPF2_1'] = btn_LHPF2_1
+
+btn_LHPF2_2 = DragButton()
+btn_LHPF2_2.setObjectName("btn_LHPF2_2")
+btn_LHPF2_2.setControlName("LHPF2 Input 2")
+btn_LHPF2_2.setAllowDrag(False)
+btn_LHPF2_2.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF2_2.setIcon(icon)
+btn_LHPF2_2.setFixedWidth(16)
+btn_LHPF2_2.setFixedHeight(16)
+inputs_dic['LHPF2_2'] = btn_LHPF2_2
+
+
+btn_LHPF2_3 = DragButton()
+btn_LHPF2_3.setObjectName("btn_LHPF2_3")
+btn_LHPF2_3.setControlName("LHPF2 Input 3")
+btn_LHPF2_3.setAllowDrag(False)
+btn_LHPF2_3.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF2_3.setIcon(icon)
+btn_LHPF2_3.setFixedWidth(16)
+btn_LHPF2_3.setFixedHeight(16)
+inputs_dic['LHPF2_3'] = btn_LHPF2_3
+
+btn_LHPF2_4 = DragButton()
+btn_LHPF2_4.setObjectName("btn_LHPF2_4")
+btn_LHPF2_4.setControlName("LHPF2 Input 4")
+btn_LHPF2_4.setAllowDrag(False)
+btn_LHPF2_4.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF2_4.setIcon(icon)
+btn_LHPF2_4.setFixedWidth(16)
+btn_LHPF2_4.setFixedHeight(16)
+inputs_dic['LHPF2_4'] = btn_LHPF2_4
+
+btn_LHPF3_1 = DragButton()
+btn_LHPF3_1.setObjectName("btn_LHPF3_1")
+btn_LHPF3_1.setControlName("LHPF3 Input 1")
+btn_LHPF3_1.setAllowDrag(False)
+btn_LHPF3_1.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF3_1.setIcon(icon)
+btn_LHPF3_1.setFixedWidth(16)
+btn_LHPF3_1.setFixedHeight(16)
+inputs_dic['LHPF3_1'] = btn_LHPF3_1
+
+btn_LHPF3_2 = DragButton()
+btn_LHPF3_2.setObjectName("btn_LHPF3_2")
+btn_LHPF3_2.setControlName("LHPF3 Input 2")
+btn_LHPF3_2.setAllowDrag(False)
+btn_LHPF3_2.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF3_2.setIcon(icon)
+btn_LHPF3_2.setFixedWidth(16)
+btn_LHPF3_2.setFixedHeight(16)
+inputs_dic['LHPF3_2'] = btn_LHPF3_2
+
+btn_LHPF3_3 = DragButton()
+btn_LHPF3_3.setObjectName("btn_LHPF3_3")
+btn_LHPF3_3.setControlName("LHPF3 Input 3")
+btn_LHPF3_3.setAllowDrag(False)
+btn_LHPF3_3.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF3_3.setIcon(icon)
+btn_LHPF3_3.setFixedWidth(16)
+btn_LHPF3_3.setFixedHeight(16)
+inputs_dic['LHPF3_3'] = btn_LHPF3_3
+
+btn_LHPF3_4 = DragButton()
+btn_LHPF3_4.setObjectName("btn_LHPF3_4")
+btn_LHPF3_4.setControlName("LHPF3 Input 4")
+btn_LHPF3_4.setAllowDrag(False)
+btn_LHPF3_4.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF3_4.setIcon(icon)
+btn_LHPF3_4.setFixedWidth(16)
+btn_LHPF3_4.setFixedHeight(16)
+inputs_dic['LHPF3_4'] = btn_LHPF3_4
+
+btn_LHPF4_1 = DragButton()
+btn_LHPF4_1.setObjectName("btn_LHPF4_1")
+btn_LHPF4_1.setControlName("LHPF4 Input 1")
+btn_LHPF4_1.setAllowDrag(False)
+btn_LHPF4_1.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF4_1.setIcon(icon)
+btn_LHPF4_1.setFixedWidth(16)
+btn_LHPF4_1.setFixedHeight(16)
+inputs_dic['LHPF4_1'] = btn_LHPF4_1
+
+btn_LHPF4_2 = DragButton()
+btn_LHPF4_2.setObjectName("btn_LHPF4_2")
+btn_LHPF4_2.setControlName("LHPF4 Input 2")
+btn_LHPF4_2.setAllowDrag(False)
+btn_LHPF4_2.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF4_2.setIcon(icon)
+btn_LHPF4_2.setFixedWidth(16)
+btn_LHPF4_2.setFixedHeight(16)
+inputs_dic['LHPF4_2'] = btn_LHPF4_2
+
+btn_LHPF4_3 = DragButton()
+btn_LHPF4_3.setObjectName("btn_LHPF4_3")
+btn_LHPF4_3.setControlName("LHPF4 Input 3")
+btn_LHPF4_3.setAllowDrag(False)
+btn_LHPF4_3.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF4_3.setIcon(icon)
+btn_LHPF4_3.setFixedWidth(16)
+btn_LHPF4_3.setFixedHeight(16)
+inputs_dic['LHPF4_3'] = btn_LHPF4_3
+
+btn_LHPF4_4 = DragButton()
+btn_LHPF4_4.setObjectName("btn_LHPF4_4")
+btn_LHPF4_4.setControlName("LHPF4 Input 4")
+btn_LHPF4_4.setAllowDrag(False)
+btn_LHPF4_4.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF4_4.setIcon(icon)
+btn_LHPF4_4.setFixedWidth(16)
+btn_LHPF4_4.setFixedHeight(16)
+inputs_dic['LHPF4_4'] = btn_LHPF4_4
+
+#Jack connectors
+btn_LHPF1 = DragButton()
+btn_LHPF1.setObjectName("btn_LHPF1")
+btn_LHPF1.setControlName("LHPF1")
+btn_LHPF1.setAllowDrag(True) #Allow Drag n Drop of DragButton
+btn_LHPF1.setAcceptDrops(False)
+btn_LHPF1.setGeometry(QRect(-100, 50, 51, 31)) #Set dimensions of it
+#Set icon of button1
+icon = QIcon()
+icon.addPixmap(QPixmap(":/audio-input-line.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF1.setIcon(icon)
+btn_LHPF1.setFlat(False)
+btn_LHPF1.setMenu(menu)
+jacks_dic['LHPF1'] = btn_LHPF1
+
+btn_LHPF2 = DragButton()
+btn_LHPF2.setObjectName("btn_LHPF2")
+btn_LHPF2.setControlName("LHPF2")
+btn_LHPF2.setGeometry(QRect(200, -50, 51, 31)) #Set dimensions of it
+btn_LHPF2.setAllowDrag(True) #Allow Drag n Drop of DragButton
+btn_LHPF2.setAcceptDrops(False)
+#Set input line icon
+icon = QIcon()
+icon.addPixmap(QPixmap(":/audio-input-line.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF2.setIcon(icon)
+btn_LHPF2.setFlat(False)
+btn_LHPF2.setMenu(menu)
+jacks_dic['LHPF2'] = btn_LHPF2
+
+btn_LHPF3 = DragButton()
+btn_LHPF3.setObjectName("btn_LHPF3")
+btn_LHPF3.setControlName("LHPF3")
+btn_LHPF3.setGeometry(QRect(200, -50, 51, 31)) #Set dimensions of it
+btn_LHPF3.setAllowDrag(True) #Allow Drag n Drop of DragButton
+btn_LHPF3.setAcceptDrops(False)
+#Set input line icon
+icon = QIcon()
+icon.addPixmap(QPixmap(":/audio-input-line.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF3.setIcon(icon)
+btn_LHPF3.setFlat(False)
+btn_LHPF3.setMenu(menu)
+jacks_dic['LHPF3'] = btn_LHPF3
+
+btn_LHPF4 = DragButton()
+btn_LHPF4.setObjectName("btn_LHPF4")
+btn_LHPF4.setControlName("LHPF4")
+btn_LHPF4.setGeometry(QRect(200, -50, 51, 31)) #Set dimensions of it
+btn_LHPF4.setAllowDrag(True) #Allow Drag n Drop of DragButton
+btn_LHPF4.setAcceptDrops(False)
+#Set input line icon
+icon = QIcon()
+icon.addPixmap(QPixmap(":/audio-input-line.png"), QIcon.Normal, QIcon.Off)
+btn_LHPF4.setIcon(icon)
+btn_LHPF4.setFlat(False)
+btn_LHPF4.setMenu(menu)
+jacks_dic['LHPF4'] = btn_LHPF4
+
+
+#Labels and Icons
+lbl_LHPF1 = QtGui.QLabel()
+lbl_LHPF1.setObjectName("lbl_LHPF1")
+lbl_LHPF2 = QtGui.QLabel()
+lbl_LHPF2.setObjectName("lbl_LHPF2")
+lbl_LHPF3 = QtGui.QLabel()
+lbl_LHPF3.setObjectName("lbl_LHPF3")
+lbl_LHPF4 = QtGui.QLabel()
+lbl_LHPF4.setObjectName("lbl_LHPF4")
+lbl_LHPF1.setText("<html><head/><body><p><span style=\" font-weight:600;\"> LHPF 1 </span></p></body></html>")
+lbl_LHPF2.setText("<html><head/><body><p><span style=\" font-weight:600;\"> LHPF 2 </span></p></body></html>")
+lbl_LHPF3.setText("<html><head/><body><p><span style=\" font-weight:600;\"> LHPF 3 </span></p></body></html>")
+lbl_LHPF4.setText("<html><head/><body><p><span style=\" font-weight:600;\"> LHPF 4 </span></p></body></html>")
+lbl_LHPF = QtGui.QLabel()
+lbl_LHPF.setObjectName("lbl_LHPF")
+lbl_LHPF.setText("<html><head/><body><p><span style=\" font-weight:600;\"> Low/High Pass Filters</p> </span></body></html>")
+
+#Layouts
+LHPF1_connectors_layout = QVBoxLayout()
+LHPF1_connectors_layout.addStretch(4)
+LHPF1_connectors_layout.addWidget(btn_LHPF1_1)
+LHPF1_connectors_layout.addWidget(btn_LHPF1_2)
+LHPF1_connectors_layout.addWidget(btn_LHPF1_3)
+LHPF1_connectors_layout.addWidget(btn_LHPF1_4)
+LHPF1_connectors_layout.addStretch(4)
+
+LHPF1_layout = QHBoxLayout()
+LHPF1_layout.addLayout(LHPF1_connectors_layout)
+LHPF1_layout.addWidget(lbl_LHPF1)
+LHPF1_layout.addWidget(btn_LHPF1)
+
+
+LHPF2_connectors_layout = QVBoxLayout()
+LHPF2_connectors_layout.addStretch(4)
+LHPF2_connectors_layout.addWidget(btn_LHPF2_1)
+LHPF2_connectors_layout.addWidget(btn_LHPF2_2)
+LHPF2_connectors_layout.addWidget(btn_LHPF2_3)
+LHPF2_connectors_layout.addWidget(btn_LHPF2_4)
+LHPF2_connectors_layout.addStretch(4)
+
+LHPF2_layout = QHBoxLayout()
+LHPF2_layout.addLayout(LHPF2_connectors_layout)
+LHPF2_layout.addWidget(lbl_LHPF2)
+LHPF2_layout.addWidget(btn_LHPF2)
+
+LHPF3_connectors_layout = QVBoxLayout()
+LHPF3_connectors_layout.addStretch(4)
+LHPF3_connectors_layout.addWidget(btn_LHPF3_1)
+LHPF3_connectors_layout.addWidget(btn_LHPF3_2)
+LHPF3_connectors_layout.addWidget(btn_LHPF3_3)
+LHPF3_connectors_layout.addWidget(btn_LHPF3_4)
+LHPF3_connectors_layout.addStretch(4)
+
+LHPF3_layout = QHBoxLayout()
+LHPF3_layout.addLayout(LHPF3_connectors_layout)
+LHPF3_layout.addWidget(lbl_LHPF3)
+LHPF3_layout.addWidget(btn_LHPF3)
+
+LHPF4_connectors_layout = QVBoxLayout()
+LHPF4_connectors_layout.addStretch(4)
+LHPF4_connectors_layout.addWidget(btn_LHPF4_1)
+LHPF4_connectors_layout.addWidget(btn_LHPF4_2)
+LHPF4_connectors_layout.addWidget(btn_LHPF4_3)
+LHPF4_connectors_layout.addWidget(btn_LHPF4_4)
+LHPF4_connectors_layout.addStretch(4)
+
+LHPF4_layout = QHBoxLayout()
+LHPF4_layout.addLayout(LHPF4_connectors_layout)
+LHPF4_layout.addWidget(lbl_LHPF4)
+LHPF4_layout.addWidget(btn_LHPF4)
+
+LHPF_layout = QVBoxLayout()
+LHPF_layout.addStretch(1)
+LHPF_layout.addLayout(LHPF1_layout)
+LHPF_layout.addLayout(LHPF2_layout)
+LHPF_layout.addLayout(LHPF3_layout)
+LHPF_layout.addLayout(LHPF4_layout)
+LHPF_layout.addStretch(1)
+
+LowHighPassFilter_layout = QVBoxLayout()
+LowHighPassFilter_layout.addWidget(lbl_LHPF)
+LowHighPassFilter_layout.addLayout(LHPF_layout)
 
 
 #                                                                        ////  In Devices Layouts  ////
@@ -1211,6 +1547,7 @@ Filters_layouts = QVBoxLayout()
 lbl_filters = QLabel("Filters")
 Filters_layouts.addWidget(lbl_filters)
 Filters_layouts.addLayout(DRC_layout)
+Filters_layouts.addLayout(LowHighPassFilter_layout)
 Filters_layouts.addStretch(1)
 
 
@@ -1435,6 +1772,90 @@ proxy_btn_DRC1R_4.setWidget(btn_DRC1R_4)
 proxy_btn_DRC1R_4.setAcceptDrops(True)
 scene.addItem(proxy_btn_DRC1R_4)
 
+#               ////Proxy Widgets for LHPF////
+#             /// Proxy Widgets for LHPF1 ///
+proxy_btn_LHPF1_1 = ProxyWidget() 
+proxy_btn_LHPF1_1.setWidget(btn_LHPF1_1)
+proxy_btn_LHPF1_1.setAcceptDrops(True)
+scene.addItem(proxy_btn_LHPF1_1)
+
+proxy_btn_LHPF1_2 = ProxyWidget() 
+proxy_btn_LHPF1_2.setWidget(btn_LHPF1_2)
+proxy_btn_LHPF1_2.setAcceptDrops(True)
+scene.addItem(proxy_btn_LHPF1_2)
+
+proxy_btn_LHPF1_3 = ProxyWidget() 
+proxy_btn_LHPF1_3.setWidget(btn_LHPF1_3)
+proxy_btn_LHPF1_3.setAcceptDrops(True)
+scene.addItem(proxy_btn_LHPF1_3)
+
+proxy_btn_LHPF1_4 = ProxyWidget() 
+proxy_btn_LHPF1_4.setWidget(btn_LHPF1_4)
+proxy_btn_LHPF1_4.setAcceptDrops(True)
+scene.addItem(proxy_btn_LHPF1_4)
+#                    // Proxy Widgets for LHPF2  //
+proxy_btn_LHPF2_1 = ProxyWidget() 
+proxy_btn_LHPF2_1.setWidget(btn_LHPF2_1)
+proxy_btn_LHPF2_1.setAcceptDrops(True)
+scene.addItem(proxy_btn_LHPF2_1)
+
+proxy_btn_LHPF2_2 = ProxyWidget() 
+proxy_btn_LHPF2_2.setWidget(btn_LHPF2_2)
+proxy_btn_LHPF2_2.setAcceptDrops(True)
+scene.addItem(proxy_btn_LHPF2_2)
+
+proxy_btn_LHPF2_3 = ProxyWidget() 
+proxy_btn_LHPF2_3.setWidget(btn_LHPF2_3)
+proxy_btn_LHPF2_3.setAcceptDrops(True)
+scene.addItem(proxy_btn_LHPF2_3)
+
+proxy_btn_LHPF2_4 = ProxyWidget() 
+proxy_btn_LHPF2_4.setWidget(btn_LHPF2_4)
+proxy_btn_LHPF2_4.setAcceptDrops(True)
+scene.addItem(proxy_btn_LHPF2_4)
+
+#                    // Proxy Widgets for LHPF3  //
+proxy_btn_LHPF3_1 = ProxyWidget() 
+proxy_btn_LHPF3_1.setWidget(btn_LHPF3_1)
+proxy_btn_LHPF3_1.setAcceptDrops(True)
+scene.addItem(proxy_btn_LHPF3_1)
+
+proxy_btn_LHPF3_2 = ProxyWidget() 
+proxy_btn_LHPF3_2.setWidget(btn_LHPF3_2)
+proxy_btn_LHPF3_2.setAcceptDrops(True)
+scene.addItem(proxy_btn_LHPF3_2)
+
+proxy_btn_LHPF3_3 = ProxyWidget() 
+proxy_btn_LHPF3_3.setWidget(btn_LHPF3_3)
+proxy_btn_LHPF3_3.setAcceptDrops(True)
+scene.addItem(proxy_btn_LHPF3_3)
+
+proxy_btn_LHPF3_4 = ProxyWidget() 
+proxy_btn_LHPF3_4.setWidget(btn_LHPF3_4)
+proxy_btn_LHPF3_4.setAcceptDrops(True)
+scene.addItem(proxy_btn_LHPF3_4)
+
+#                    // Proxy Widgets for LHPF4  //
+proxy_btn_LHPF4_1 = ProxyWidget() 
+proxy_btn_LHPF4_1.setWidget(btn_LHPF4_1)
+proxy_btn_LHPF4_1.setAcceptDrops(True)
+scene.addItem(proxy_btn_LHPF4_1)
+
+proxy_btn_LHPF4_2 = ProxyWidget() 
+proxy_btn_LHPF4_2.setWidget(btn_LHPF4_2)
+proxy_btn_LHPF4_2.setAcceptDrops(True)
+scene.addItem(proxy_btn_LHPF4_2)
+
+proxy_btn_LHPF4_3 = ProxyWidget() 
+proxy_btn_LHPF4_3.setWidget(btn_LHPF4_3)
+proxy_btn_LHPF4_3.setAcceptDrops(True)
+scene.addItem(proxy_btn_LHPF4_3)
+
+proxy_btn_LHPF4_4 = ProxyWidget() 
+proxy_btn_LHPF4_4.setWidget(btn_LHPF4_4)
+proxy_btn_LHPF4_4.setAcceptDrops(True)
+scene.addItem(proxy_btn_LHPF4_4)
+
 def amixer_command(control, value):
     p = subprocess.Popen(["amixer", "-c0", "sset", control, value ], stdout=subprocess.PIPE)
     p.communicate()
@@ -1527,6 +1948,10 @@ submenus_dic['AIF2TX1_submenu'] = QMenu("SPDIF OUT (L)")
 submenus_dic['AIF2TX2_submenu'] = QMenu("SPDIF OUT (R)")
 submenus_dic['DRC1L_submenu'] = QMenu("Dynamic Range Controller 1 (L)")
 submenus_dic['DRC1R_submenu'] = QMenu("Dynamic Range Controller 1 (R)")
+submenus_dic['LHPF1_submenu'] = QMenu("Low/High Pass Filter 1")
+submenus_dic['LHPF2_submenu'] = QMenu("Low/High Pass Filter 2")
+submenus_dic['LHPF3_submenu'] = QMenu("Low/High Pass Filter 3")
+submenus_dic['LHPF4_submenu'] = QMenu("Low/High Pass Filter 4")
 
 
 #Create a actions ordered dictionary for Menu
@@ -1570,6 +1995,18 @@ for input   in inputs_dic:
     if input[:5] == 'DRC1R' :
         submenus_dic['DRC1R_submenu'].addAction( actions_dic[ input ] )
     
+    if input[:5] == 'LHPF1' :
+        submenus_dic['LHPF1_submenu'].addAction( actions_dic[ input ] )
+    
+    if input[:5] == 'LHPF2' :
+        submenus_dic['LHPF2_submenu'].addAction( actions_dic[ input ] )
+    
+    if input[:5] == 'LHPF3' :
+        submenus_dic['LHPF3_submenu'].addAction( actions_dic[ input ] )
+    
+    if input[:5] == 'LHPF4' :
+        submenus_dic['LHPF4_submenu'].addAction( actions_dic[ input ] )
+    
     #Connect every input button to slot (on_link)
     inputs_dic[ input ].linked.connect( on_link )
     inputs_dic[ input ].mousepressed.connect( lambda: on_press(   inputs_dic[ input ] ) )
@@ -1586,7 +2023,7 @@ for jacks in jacks_dic:
 
 # Create the view using the scene
 view = WiringGraphicsView(None, scene)
-#view.resize(420,680)
+view.resize(800,600)
 view.show()
 view.setWindowTitle("Wolfson Patchbay and Mixer")
 
