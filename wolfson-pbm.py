@@ -223,7 +223,7 @@ record_playback_layouts.addStretch(1)
 #                                               ////////////////// INPUT DEVICES ////////////////////////
 #                                                    /////       Digital Microphones (DMIC)   ////
 
-#IN2L (Headset Mic IN LEFT CHANNEL) 
+#IN2L (LEFT DMIC CHANNEL) 
 btn_IN2L = DragButton()
 btn_IN2L.setObjectName("btn_IN2L")
 btn_IN2L.setControlName("IN2L")
@@ -238,7 +238,7 @@ btn_IN2L.setFlat(False)
 btn_IN2L.setMenu(menu)
 jacks_dic['IN2L'] = btn_IN2L
 
-#IN2R (Headset IN RIGHT CHANNEL)
+#IN2R (RIGHT DMIC CHANNEL)
 btn_IN2R = DragButton()
 btn_IN2R.setObjectName("btn_IN2R")
 btn_IN2R.setControlName("IN2R")
@@ -254,8 +254,8 @@ btn_IN2R.setMenu(menu)
 jacks_dic['IN2R'] = btn_IN2R
 
 #Checkbox On/off
-chk_box = QtGui.QCheckBox('On')
-chk_box.setObjectName("chk_box")
+chk_dmic = QtGui.QCheckBox('On')
+chk_dmic.setObjectName("chk_dmic")
 
 #Labels and Icons
 lbl_IN2L = QtGui.QLabel()
@@ -279,7 +279,7 @@ IN2R_layout.addWidget(lbl_IN2R)
 IN2R_layout.addWidget(btn_IN2R)
 
 IN2_layout = QVBoxLayout()
-IN2_layout.addWidget(chk_box)
+IN2_layout.addWidget(chk_dmic)
 IN2_layout.addLayout(IN2L_layout)
 IN2_layout.addLayout(IN2R_layout)
 
@@ -1904,6 +1904,8 @@ proxy_btn_LHPF4_4.setWidget(btn_LHPF4_4)
 proxy_btn_LHPF4_4.setAcceptDrops(True)
 scene.addItem(proxy_btn_LHPF4_4)
 
+#                            ///////////////////////  METHODS /////////////////////////////
+
 def amixer_command(control, value):
     p = subprocess.Popen(["amixer", "-c0", "sset", control, value ], stdout=subprocess.PIPE)
     p.communicate()
@@ -2067,6 +2069,8 @@ for submenu in submenus_dic:
 for jacks in jacks_dic:
     jacks_dic[ jacks ].mousepressed.connect( lambda: on_press(   jacks_dic[ jacks ] ) )
     #inputs_dic[ jacks ].mousepressed.connect( lambda: on_link(   jacks_dic[ jacks ] ) )
+    
+
 
 
 # Create the view using the scene
