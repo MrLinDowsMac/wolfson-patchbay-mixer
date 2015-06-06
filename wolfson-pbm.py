@@ -1435,8 +1435,31 @@ btn_LHPF4.setFlat(False)
 btn_LHPF4.setMenu(menu)
 jacks_dic['LHPF4'] = btn_LHPF4
 
+cmb_filtermode_1 = QtGui.QComboBox()
+cmb_filtermode_1.addItem("High Pass")
+cmb_filtermode_1.addItem("Low Pass")
+
+cmb_filtermode_2 = QtGui.QComboBox()
+cmb_filtermode_2.addItem("High Pass")
+cmb_filtermode_2.addItem("Low Pass")
+
+cmb_filtermode_3 = QtGui.QComboBox()
+cmb_filtermode_3.addItem("High Pass")
+cmb_filtermode_3.addItem("Low Pass")
+
+cmb_filtermode_4 = QtGui.QComboBox()
+cmb_filtermode_4.addItem("High Pass")
+cmb_filtermode_4.addItem("Low Pass")
 
 #Labels and Icons
+lbl_cmb_filtermode_1 = QtGui.QLabel()
+lbl_cmb_filtermode_1.setText("Mode: ")
+lbl_cmb_filtermode_2 = QtGui.QLabel()
+lbl_cmb_filtermode_2.setText("Mode: ")
+lbl_cmb_filtermode_3 = QtGui.QLabel()
+lbl_cmb_filtermode_3.setText("Mode: ")
+lbl_cmb_filtermode_4 = QtGui.QLabel()
+lbl_cmb_filtermode_4.setText("Mode: ")
 lbl_LHPF1 = QtGui.QLabel()
 lbl_LHPF1.setObjectName("lbl_LHPF1")
 lbl_LHPF2 = QtGui.QLabel()
@@ -1462,10 +1485,16 @@ LHPF1_connectors_layout.addWidget(btn_LHPF1_3)
 LHPF1_connectors_layout.addWidget(btn_LHPF1_4)
 LHPF1_connectors_layout.addStretch(4)
 
+LHPF1_mode_layout = QVBoxLayout()
+LHPF1_mode_layout.addWidget(lbl_cmb_filtermode_1)
+LHPF1_mode_layout.addWidget(cmb_filtermode_1)
+LHPF1_mode_layout.addWidget(btn_LHPF1)
+
 LHPF1_layout = QHBoxLayout()
 LHPF1_layout.addLayout(LHPF1_connectors_layout)
 LHPF1_layout.addWidget(lbl_LHPF1)
-LHPF1_layout.addWidget(btn_LHPF1)
+LHPF1_layout.addLayout(LHPF1_mode_layout)
+#LHPF1_layout.addWidget(btn_LHPF1)
 
 
 LHPF2_connectors_layout = QVBoxLayout()
@@ -1476,10 +1505,16 @@ LHPF2_connectors_layout.addWidget(btn_LHPF2_3)
 LHPF2_connectors_layout.addWidget(btn_LHPF2_4)
 LHPF2_connectors_layout.addStretch(4)
 
+LHPF2_mode_layout = QVBoxLayout()
+LHPF2_mode_layout.addWidget(lbl_cmb_filtermode_2)
+LHPF2_mode_layout.addWidget(cmb_filtermode_2)
+LHPF2_mode_layout.addWidget(btn_LHPF2)
+
 LHPF2_layout = QHBoxLayout()
 LHPF2_layout.addLayout(LHPF2_connectors_layout)
 LHPF2_layout.addWidget(lbl_LHPF2)
-LHPF2_layout.addWidget(btn_LHPF2)
+#LHPF2_layout.addWidget(btn_LHPF2)
+LHPF2_layout.addLayout(LHPF2_mode_layout)
 
 LHPF3_connectors_layout = QVBoxLayout()
 LHPF3_connectors_layout.addStretch(4)
@@ -1489,10 +1524,16 @@ LHPF3_connectors_layout.addWidget(btn_LHPF3_3)
 LHPF3_connectors_layout.addWidget(btn_LHPF3_4)
 LHPF3_connectors_layout.addStretch(4)
 
+LHPF3_mode_layout = QVBoxLayout()
+LHPF3_mode_layout.addWidget(lbl_cmb_filtermode_3)
+LHPF3_mode_layout.addWidget(cmb_filtermode_3)
+LHPF3_mode_layout.addWidget(btn_LHPF3)
+
 LHPF3_layout = QHBoxLayout()
 LHPF3_layout.addLayout(LHPF3_connectors_layout)
 LHPF3_layout.addWidget(lbl_LHPF3)
-LHPF3_layout.addWidget(btn_LHPF3)
+#LHPF3_layout.addWidget(btn_LHPF3)
+LHPF3_layout.addLayout(LHPF3_mode_layout)
 
 LHPF4_connectors_layout = QVBoxLayout()
 LHPF4_connectors_layout.addStretch(4)
@@ -1502,10 +1543,16 @@ LHPF4_connectors_layout.addWidget(btn_LHPF4_3)
 LHPF4_connectors_layout.addWidget(btn_LHPF4_4)
 LHPF4_connectors_layout.addStretch(4)
 
+LHPF4_mode_layout = QVBoxLayout()
+LHPF4_mode_layout.addWidget(lbl_cmb_filtermode_4)
+LHPF4_mode_layout.addWidget(cmb_filtermode_4)
+LHPF4_mode_layout.addWidget(btn_LHPF4)
+
 LHPF4_layout = QHBoxLayout()
 LHPF4_layout.addLayout(LHPF4_connectors_layout)
 LHPF4_layout.addWidget(lbl_LHPF4)
-LHPF4_layout.addWidget(btn_LHPF4)
+#LHPF4_layout.addWidget(btn_LHPF4)
+LHPF4_layout.addLayout(LHPF4_mode_layout)
 
 LHPF_layout = QVBoxLayout()
 LHPF_layout.addStretch(1)
@@ -1530,6 +1577,7 @@ In_layouts.addLayout(DMIC_layout)
 In_layouts.addLayout(LineIn_layout)
 In_layouts.addLayout(SPDIF_IN_layout)
 In_layouts.addLayout(Generators_layout)
+In_layouts.addStretch(1)
 
 
 #                                                                       /// Out Devices Layouts ///
