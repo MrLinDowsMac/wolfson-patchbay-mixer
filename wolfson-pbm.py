@@ -2099,6 +2099,37 @@ chk_dmic.stateChanged.connect( onCheckdmic )
 chk_spdifin.stateChanged.connect( onCheckspdifin )
 
 
+def filter_mode1( combo ):
+    if combo == 0: #0 is the index of Low-Pass
+        amixer_command( 'LHPF1 Mode',  'High-pass' )
+    elif combo == 1: #is the index of High-pass 
+        amixer_command( 'LHPF1 Mode',  'Low-pass' )
+        
+def filter_mode2( combo ):
+    if combo == 0: #0 is the index of Low-Pass
+        amixer_command( 'LHPF2 Mode',  'High-pass' )
+    elif combo == 1: #is the index of High-pass 
+        amixer_command( 'LHPF2 Mode',  'Low-pass' )
+
+def filter_mode3( combo ):
+    if combo == 0: #0 is the index of Low-Pass
+        amixer_command( 'LHPF3 Mode',  'High-pass' )
+    elif combo == 1: #is the index of High-pass 
+        amixer_command( 'LHPF3 Mode',  'Low-pass' )
+
+def filter_mode4( combo ):
+    if combo == 0: #0 is the index of Low-Pass
+        amixer_command( 'LHPF4 Mode',  'High-pass' )
+    elif combo == 1: #is the index of High-pass 
+        amixer_command( 'LHPF4 Mode',  'Low-pass' )
+    
+cmb_filtermode_1.activated.connect( filter_mode1  )
+cmb_filtermode_2.activated.connect( filter_mode2  )
+cmb_filtermode_3.activated.connect( filter_mode3 )
+cmb_filtermode_4.activated.connect( filter_mode4 )
+
+
+
 # Create the view using the scene
 view = WiringGraphicsView(None, scene)
 view.resize(800,600)
