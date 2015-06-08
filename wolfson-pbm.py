@@ -257,6 +257,7 @@ jacks_dic['IN2R'] = btn_IN2R
 chk_dmic = QtGui.QCheckBox('On')
 chk_dmic.setObjectName("chk_dmic")
 
+
 #Labels and Icons
 lbl_IN2L = QtGui.QLabel()
 lbl_IN2L.setObjectName("lbl_IN2L")
@@ -384,8 +385,8 @@ btn_IN3R.setMenu(menu)
 jacks_dic['IN3R'] = btn_IN3R
 
 #Checkbox On/off
-chk_linein = QtGui.QCheckBox('On')
-chk_linein.setObjectName("chk_linein")
+#chk_linein = QtGui.QCheckBox('On')
+#chk_linein.setObjectName("chk_linein")
 
 #Labels and Icons
 lbl_IN3L = QtGui.QLabel()
@@ -409,7 +410,7 @@ IN3R_layout.addWidget(lbl_IN3R)
 IN3R_layout.addWidget(btn_IN3R)
 
 IN3_layout = QVBoxLayout()
-IN3_layout.addWidget(chk_linein)
+#IN3_layout.addWidget(chk_linein)
 IN3_layout.addLayout(IN3L_layout)
 IN3_layout.addLayout(IN3R_layout)
 
@@ -1913,7 +1914,6 @@ def amixer_command(control, value):
     #print rc
     return rc
 
-
 #Slot for connecting by drag n drop
 def on_link(input, jack):
     print input 
@@ -2070,7 +2070,32 @@ for jacks in jacks_dic:
     jacks_dic[ jacks ].mousepressed.connect( lambda: on_press(   jacks_dic[ jacks ] ) )
     #inputs_dic[ jacks ].mousepressed.connect( lambda: on_link(   jacks_dic[ jacks ] ) )
     
+    #                   ///////  CHECK BOX METHODS ///////
+    
+def onCheckheadsetmic(state):
+        #print state
+        if state == QtCore.Qt.Checked:
+            amixer_command( 'Headset Mic',  'on')
+        else:
+            amixer_command( 'Headset Mic',  'off' )
 
+def onCheckdmic(state):
+        #print state
+        if state == QtCore.Qt.Checked:
+            amixer_command( 'DMIC',  'on' )
+        else:
+            amixer_command( 'DMIC',  'off' )
+
+def onCheckspdifin(state):
+        #print state
+        if state == QtCore.Qt.Checked:
+            amixer_command( 'SPDIF in',  'on' )
+        else:
+            amixer_command( 'SPDIF in',  'off' )
+
+chk_headsetmic.stateChanged.connect( onCheckheadsetmic )
+chk_dmic.stateChanged.connect( onCheckdmic )
+chk_spdifin.stateChanged.connect( onCheckspdifin )
 
 
 # Create the view using the scene
