@@ -2075,23 +2075,41 @@ for jacks in jacks_dic:
 def onCheckheadsetmic(state):
         #print state
         if state == QtCore.Qt.Checked:
+<<<<<<< HEAD
             amixer_command( 'Headset Mic',  'on')
         else:
             amixer_command( 'Headset Mic',  'off' )
+=======
+            amixer_command( 'Headset Mic',  on )
+        else:
+            amixer_command( 'Headset Mic',  off )
+>>>>>>> 2bdca77642f74ee24ba192c15d1b501fdfe20757
 
 def onCheckdmic(state):
         #print state
         if state == QtCore.Qt.Checked:
+<<<<<<< HEAD
             amixer_command( 'DMIC',  'on' )
         else:
             amixer_command( 'DMIC',  'off' )
+=======
+            amixer_command( 'DMIC',  on )
+        else:
+            amixer_command( 'DMIC',  off )
+>>>>>>> 2bdca77642f74ee24ba192c15d1b501fdfe20757
 
 def onCheckspdifin(state):
         #print state
         if state == QtCore.Qt.Checked:
+<<<<<<< HEAD
             amixer_command( 'SPDIF in',  'on' )
         else:
             amixer_command( 'SPDIF in',  'off' )
+=======
+            amixer_command( 'SPDIF in',  on )
+        else:
+            amixer_command( 'SPDIF in',  off )
+>>>>>>> 2bdca77642f74ee24ba192c15d1b501fdfe20757
 
 chk_headsetmic.stateChanged.connect( onCheckheadsetmic )
 chk_dmic.stateChanged.connect( onCheckdmic )
