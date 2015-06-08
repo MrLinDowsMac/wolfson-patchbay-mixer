@@ -1003,6 +1003,154 @@ SPDIFOUT_layout = QHBoxLayout()
 SPDIFOUT_layout.addLayout(AIF2TX_layout)
 SPDIFOUT_layout.addWidget(lbl_AIF2TX)
 
+#                                                                       //// SPEAKERS (SPKOUT) ////
+btn_SPKOUTL_1 = DragButton()
+btn_SPKOUTL_1.setObjectName("btn_SPKOUTL_1")
+btn_SPKOUTL_1.setControlName("SPKOUTL Input 1")
+btn_SPKOUTL_1.setAllowDrag(False)
+btn_SPKOUTL_1.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_SPKOUTL_1.setIcon(icon)
+btn_SPKOUTL_1.setFixedWidth(16)
+btn_SPKOUTL_1.setFixedHeight(16)
+inputs_dic['SPKOUTL_1'] = btn_SPKOUTL_1
+
+btn_SPKOUTL_2 = DragButton()
+btn_SPKOUTL_2.setObjectName("btn_SPKOUTL_2")
+btn_SPKOUTL_2.setControlName("SPKOUTL Input 2")
+btn_SPKOUTL_2.setAllowDrag(False)
+btn_SPKOUTL_2.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_SPKOUTL_2.setIcon(icon)
+btn_SPKOUTL_2.setFixedWidth(16)
+btn_SPKOUTL_2.setFixedHeight(16)
+inputs_dic['SPKOUTL_2'] = btn_SPKOUTL_2
+
+btn_SPKOUTL_3 = DragButton()
+btn_SPKOUTL_3.setObjectName("btn_SPKOUTL_3")
+btn_SPKOUTL_3.setControlName("SPKOUTL Input 3")
+btn_SPKOUTL_3.setAllowDrag(False)
+btn_SPKOUTL_3.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_SPKOUTL_3.setIcon(icon)
+btn_SPKOUTL_3.setFixedWidth(16)
+btn_SPKOUTL_3.setFixedHeight(16)
+inputs_dic['SPKOUTL_3'] = btn_SPKOUTL_3
+
+
+btn_SPKOUTL_4 = DragButton()
+btn_SPKOUTL_4.setObjectName("btn_SPKOUTL_4")
+btn_SPKOUTL_4.setControlName("SPKOUTL Input 4")
+btn_SPKOUTL_4.setAllowDrag(False)
+btn_SPKOUTL_4.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_SPKOUTL_4.setIcon(icon)
+btn_SPKOUTL_4.setFixedWidth(16)
+btn_SPKOUTL_4.setFixedHeight(16)
+inputs_dic['SPKOUTL_4'] = btn_SPKOUTL_4
+
+btn_SPKOUTR_1 = DragButton()
+btn_SPKOUTR_1.setObjectName("btn_SPKOUTR_1")
+btn_SPKOUTR_1.setControlName("SPKOUTR Input 1")
+btn_SPKOUTR_1.setAllowDrag(False)
+btn_SPKOUTR_1.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_SPKOUTR_1.setIcon(icon)
+btn_SPKOUTR_1.setFixedWidth(16)
+btn_SPKOUTR_1.setFixedHeight(16)
+inputs_dic['SPKOUTR_1'] = btn_SPKOUTR_1
+
+btn_SPKOUTR_2 = DragButton()
+btn_SPKOUTR_2.setObjectName("btn_SPKOUTR_2")
+btn_SPKOUTR_2.setControlName("SPKOUTR Input 2")
+btn_SPKOUTR_2.setAllowDrag(False)
+btn_SPKOUTR_2.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_SPKOUTR_2.setIcon(icon)
+btn_SPKOUTR_2.setFixedWidth(16)
+btn_SPKOUTR_2.setFixedHeight(16)
+inputs_dic['SPKOUTR_2'] = btn_SPKOUTR_2
+
+
+btn_SPKOUTR_3 = DragButton()
+btn_SPKOUTR_3.setObjectName("btn_SPKOUTR_3")
+btn_SPKOUTR_3.setControlName("SPKOUTR Input 3")
+btn_SPKOUTR_3.setAllowDrag(False)
+btn_SPKOUTR_3.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_SPKOUTR_3.setIcon(icon)
+btn_SPKOUTR_3.setFixedWidth(16)
+btn_SPKOUTR_3.setFixedHeight(16)
+inputs_dic['SPKOUTR_3'] = btn_SPKOUTR_3
+
+btn_SPKOUTR_4 = DragButton()
+btn_SPKOUTR_4.setObjectName("btn_SPKOUTR_4")
+btn_SPKOUTR_4.setControlName("SPKOUTR Input 4")
+btn_SPKOUTR_4.setAllowDrag(False)
+btn_SPKOUTR_4.setAcceptDrops(True)
+icon = QIcon()
+icon.addPixmap(QPixmap(":/input_small.png"), QIcon.Normal, QIcon.Off)
+btn_SPKOUTR_4.setIcon(icon)
+btn_SPKOUTR_4.setFixedWidth(16)
+btn_SPKOUTR_4.setFixedHeight(16)
+inputs_dic['SPKOUTR_4'] = btn_SPKOUTR_4
+
+#Labels and Icons
+lbl_SPKOUTL = QtGui.QLabel()
+lbl_SPKOUTL.setObjectName("lbl_SPKOUTL")
+lbl_SPKOUTR = QtGui.QLabel()
+lbl_SPKOUTR.setObjectName("lbl_SPKOUTR")
+lbl_SPKOUTL.setText("<html><head/><body><p><span style=\" font-weight:600;\"> SPKOUT L</span></p></body></html>")
+lbl_SPKOUTR.setText("<html><head/><body><p><span style=\" font-weight:600;\"> SPKOUT R</span></p></body></html>")
+lbl_SPKOUT = QtGui.QLabel()
+lbl_SPKOUT.setObjectName("lbl_SPKOUT")
+lbl_SPKOUT.setText("<html><head/><body><p><img src=\":/spkout.png\"/></p><p><span style=\" font-weight:600;\"> Speakers </p><p>(SPKOUT) </span></p></body></html>")
+
+#Layouts
+SPKOUTL_connectors_layout = QVBoxLayout()
+SPKOUTL_connectors_layout.addStretch(4)
+SPKOUTL_connectors_layout.addWidget(btn_SPKOUTL_1)
+SPKOUTL_connectors_layout.addWidget(btn_SPKOUTL_2)
+SPKOUTL_connectors_layout.addWidget(btn_SPKOUTL_3)
+SPKOUTL_connectors_layout.addWidget(btn_SPKOUTL_4)
+SPKOUTL_connectors_layout.addStretch(4)
+
+SPKOUTL_layout = QHBoxLayout()
+SPKOUTL_layout.addLayout(SPKOUTL_connectors_layout)
+SPKOUTL_layout.addWidget(lbl_SPKOUTL)
+#SPKOUTL_layout.addStretch(1)
+
+SPKOUTR_connectors_layout = QVBoxLayout()
+SPKOUTR_connectors_layout.addStretch(5)
+SPKOUTR_connectors_layout.addWidget(btn_SPKOUTR_1)
+SPKOUTR_connectors_layout.addWidget(btn_SPKOUTR_2)
+SPKOUTR_connectors_layout.addWidget(btn_SPKOUTR_3)
+SPKOUTR_connectors_layout.addWidget(btn_SPKOUTR_4)
+SPKOUTR_connectors_layout.addStretch(5)
+
+
+SPKOUTR_layout = QHBoxLayout()
+SPKOUTR_layout.addLayout(SPKOUTR_connectors_layout)
+SPKOUTR_layout.addWidget(lbl_SPKOUTR)
+
+SPKOUT_layout = QVBoxLayout()
+SPKOUT_layout.addStretch(1)
+SPKOUT_layout.addLayout(SPKOUTL_layout)
+SPKOUT_layout.addLayout(SPKOUTR_layout)
+SPKOUT_layout.addStretch(1)
+
+Speakers_layout = QHBoxLayout()
+Speakers_layout.addLayout(SPKOUT_layout)
+Speakers_layout.addWidget(lbl_SPKOUT)
+
+
 #                                                            //////////////// OUTPUT DEVICES ////////////////
 #                                                              /// Dynamic Range Controller 1 (DRC1)
 
@@ -1588,6 +1736,7 @@ Out_layouts.addWidget(lbl_out)
 Out_layouts.addLayout(Headset_layout)
 Out_layouts.addLayout(LineOut_layout)
 Out_layouts.addLayout(SPDIFOUT_layout)
+Out_layouts.addLayout(Speakers_layout)
 Out_layouts.addStretch(1)
 
 #                                                                       ///Filters Layouts///
@@ -1779,6 +1928,48 @@ proxy_btn_AIF2TX2_4 = ProxyWidget()
 proxy_btn_AIF2TX2_4.setWidget(btn_AIF2TX2_4)
 proxy_btn_AIF2TX2_4.setAcceptDrops(True)
 scene.addItem(proxy_btn_AIF2TX2_4)
+
+#                    // Proxy Widgets for SPKOUT L //
+proxy_btn_SPKOUTL_1 = ProxyWidget() 
+proxy_btn_SPKOUTL_1.setWidget(btn_SPKOUTL_1)
+proxy_btn_SPKOUTL_1.setAcceptDrops(True)
+scene.addItem(proxy_btn_SPKOUTL_1)
+
+proxy_btn_SPKOUTL_2 = ProxyWidget() 
+proxy_btn_SPKOUTL_2.setWidget(btn_SPKOUTL_2)
+proxy_btn_SPKOUTL_2.setAcceptDrops(True)
+scene.addItem(proxy_btn_SPKOUTL_2)
+
+proxy_btn_SPKOUTL_3 = ProxyWidget() 
+proxy_btn_SPKOUTL_3.setWidget(btn_SPKOUTL_3)
+proxy_btn_SPKOUTL_3.setAcceptDrops(True)
+scene.addItem(proxy_btn_SPKOUTL_3)
+
+proxy_btn_SPKOUTL_4 = ProxyWidget() 
+proxy_btn_SPKOUTL_4.setWidget(btn_SPKOUTL_4)
+proxy_btn_SPKOUTL_4.setAcceptDrops(True)
+scene.addItem(proxy_btn_SPKOUTL_4)
+
+#                    // Proxy Widgets for SPKOUT R //
+proxy_btn_SPKOUTR_1 = ProxyWidget() 
+proxy_btn_SPKOUTR_1.setWidget(btn_SPKOUTR_1)
+proxy_btn_SPKOUTR_1.setAcceptDrops(True)
+scene.addItem(proxy_btn_SPKOUTR_1)
+
+proxy_btn_SPKOUTR_2 = ProxyWidget() 
+proxy_btn_SPKOUTR_2.setWidget(btn_SPKOUTR_2)
+proxy_btn_SPKOUTR_2.setAcceptDrops(True)
+scene.addItem(proxy_btn_SPKOUTR_2)
+
+proxy_btn_SPKOUTR_3 = ProxyWidget() 
+proxy_btn_SPKOUTR_3.setWidget(btn_SPKOUTR_3)
+proxy_btn_SPKOUTR_3.setAcceptDrops(True)
+scene.addItem(proxy_btn_SPKOUTR_3)
+
+proxy_btn_SPKOUTR_4 = ProxyWidget() 
+proxy_btn_SPKOUTR_4.setWidget(btn_SPKOUTR_4)
+proxy_btn_SPKOUTR_4.setAcceptDrops(True)
+scene.addItem(proxy_btn_SPKOUTR_4)
 
 #                       // Proxy Widgets for DRC 1 L //
 proxy_btn_DRC1L_1 = ProxyWidget() 
@@ -1996,6 +2187,8 @@ submenus_dic['HPOUT2L_submenu'] = QMenu("HPOUT2 (L) Line Out")
 submenus_dic['HPOUT2R_submenu'] = QMenu("HPOUT2 (R) Line Out")
 submenus_dic['AIF2TX1_submenu'] = QMenu("SPDIF OUT (L)")
 submenus_dic['AIF2TX2_submenu'] = QMenu("SPDIF OUT (R)")
+submenus_dic['SPKOUTL_submenu'] = QMenu("SPKOUT (L) Speaker Out")
+submenus_dic['SPKOUTR_submenu'] = QMenu("SPKOUT (R) Speaker Out")
 submenus_dic['DRC1L_submenu'] = QMenu("Dynamic Range Controller 1 (L)")
 submenus_dic['DRC1R_submenu'] = QMenu("Dynamic Range Controller 1 (R)")
 submenus_dic['LHPF1_submenu'] = QMenu("Low/High Pass Filter 1")
@@ -2039,6 +2232,12 @@ for input   in inputs_dic:
     if input[:7] == 'AIF2TX2' :
         submenus_dic['AIF2TX2_submenu'].addAction( actions_dic[ input ] )
     
+    if input[:7] == 'SPKOUTL' :
+        submenus_dic['SPKOUTL_submenu'].addAction( actions_dic[ input ] )
+    
+    if input[:7] == 'SPKOUTR' :
+        submenus_dic['SPKOUTR_submenu'].addAction( actions_dic[ input ] )
+    
     if input[:5] == 'DRC1L' :
         submenus_dic['DRC1L_submenu'].addAction( actions_dic[ input ] )
     
@@ -2056,6 +2255,7 @@ for input   in inputs_dic:
     
     if input[:5] == 'LHPF4' :
         submenus_dic['LHPF4_submenu'].addAction( actions_dic[ input ] )
+    
     
     #Connect every input button to slot (on_link)
     inputs_dic[ input ].linked.connect( on_link )
