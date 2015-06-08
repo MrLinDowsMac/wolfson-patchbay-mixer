@@ -2071,79 +2071,29 @@ for jacks in jacks_dic:
     #inputs_dic[ jacks ].mousepressed.connect( lambda: on_link(   jacks_dic[ jacks ] ) )
     
     #                   ///////  CHECK BOX METHODS ///////
-    
+
+#Checkbox to activate Headset Microphone
 def onCheckheadsetmic(state):
-        #print state
         if state == QtCore.Qt.Checked:
-<<<<<<< HEAD
-<<<<<<< HEAD
             amixer_command( 'Headset Mic',  'on')
         else:
             amixer_command( 'Headset Mic',  'off' )
-=======
-            amixer_command( 'Headset Mic',  on )
-        else:
-            amixer_command( 'Headset Mic',  off )
->>>>>>> 2bdca77642f74ee24ba192c15d1b501fdfe20757
-=======
-            amixer_command( 'Headset Mic',  on )
-        else:
-            amixer_command( 'Headset Mic',  off )
-=======
-            amixer_command( 'Headset Mic',  'on')
-        else:
-            amixer_command( 'Headset Mic',  'off' )
->>>>>>> 2d6926cbd74e58c01c5b13b72f9860cc801a4f2a
->>>>>>> b1a276123cafe66a3b4b1bbc90868961c06328db
 
+#Checkbox to activate DMIC
 def onCheckdmic(state):
-        #print state
         if state == QtCore.Qt.Checked:
-<<<<<<< HEAD
-<<<<<<< HEAD
             amixer_command( 'DMIC',  'on' )
         else:
             amixer_command( 'DMIC',  'off' )
-=======
-            amixer_command( 'DMIC',  on )
-        else:
-            amixer_command( 'DMIC',  off )
->>>>>>> 2bdca77642f74ee24ba192c15d1b501fdfe20757
-=======
-            amixer_command( 'DMIC',  on )
-        else:
-            amixer_command( 'DMIC',  off )
-=======
-            amixer_command( 'DMIC',  'on' )
-        else:
-            amixer_command( 'DMIC',  'off' )
->>>>>>> 2d6926cbd74e58c01c5b13b72f9860cc801a4f2a
->>>>>>> b1a276123cafe66a3b4b1bbc90868961c06328db
 
+#Checkbox to activate SPIDIF IN
 def onCheckspdifin(state):
-        #print state
         if state == QtCore.Qt.Checked:
-<<<<<<< HEAD
-<<<<<<< HEAD
             amixer_command( 'SPDIF in',  'on' )
         else:
             amixer_command( 'SPDIF in',  'off' )
-=======
-            amixer_command( 'SPDIF in',  on )
-        else:
-            amixer_command( 'SPDIF in',  off )
->>>>>>> 2bdca77642f74ee24ba192c15d1b501fdfe20757
-=======
-            amixer_command( 'SPDIF in',  on )
-        else:
-            amixer_command( 'SPDIF in',  off )
-=======
-            amixer_command( 'SPDIF in',  'on' )
-        else:
-            amixer_command( 'SPDIF in',  'off' )
->>>>>>> 2d6926cbd74e58c01c5b13b72f9860cc801a4f2a
->>>>>>> b1a276123cafe66a3b4b1bbc90868961c06328db
 
+#Connect checboxes to slots
 chk_headsetmic.stateChanged.connect( onCheckheadsetmic )
 chk_dmic.stateChanged.connect( onCheckdmic )
 chk_spdifin.stateChanged.connect( onCheckspdifin )
