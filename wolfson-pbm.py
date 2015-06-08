@@ -2076,6 +2076,7 @@ def onCheckheadsetmic(state):
         #print state
         if state == QtCore.Qt.Checked:
 <<<<<<< HEAD
+<<<<<<< HEAD
             amixer_command( 'Headset Mic',  'on')
         else:
             amixer_command( 'Headset Mic',  'off' )
@@ -2084,10 +2085,21 @@ def onCheckheadsetmic(state):
         else:
             amixer_command( 'Headset Mic',  off )
 >>>>>>> 2bdca77642f74ee24ba192c15d1b501fdfe20757
+=======
+            amixer_command( 'Headset Mic',  on )
+        else:
+            amixer_command( 'Headset Mic',  off )
+=======
+            amixer_command( 'Headset Mic',  'on')
+        else:
+            amixer_command( 'Headset Mic',  'off' )
+>>>>>>> 2d6926cbd74e58c01c5b13b72f9860cc801a4f2a
+>>>>>>> b1a276123cafe66a3b4b1bbc90868961c06328db
 
 def onCheckdmic(state):
         #print state
         if state == QtCore.Qt.Checked:
+<<<<<<< HEAD
 <<<<<<< HEAD
             amixer_command( 'DMIC',  'on' )
         else:
@@ -2097,10 +2109,21 @@ def onCheckdmic(state):
         else:
             amixer_command( 'DMIC',  off )
 >>>>>>> 2bdca77642f74ee24ba192c15d1b501fdfe20757
+=======
+            amixer_command( 'DMIC',  on )
+        else:
+            amixer_command( 'DMIC',  off )
+=======
+            amixer_command( 'DMIC',  'on' )
+        else:
+            amixer_command( 'DMIC',  'off' )
+>>>>>>> 2d6926cbd74e58c01c5b13b72f9860cc801a4f2a
+>>>>>>> b1a276123cafe66a3b4b1bbc90868961c06328db
 
 def onCheckspdifin(state):
         #print state
         if state == QtCore.Qt.Checked:
+<<<<<<< HEAD
 <<<<<<< HEAD
             amixer_command( 'SPDIF in',  'on' )
         else:
@@ -2110,6 +2133,16 @@ def onCheckspdifin(state):
         else:
             amixer_command( 'SPDIF in',  off )
 >>>>>>> 2bdca77642f74ee24ba192c15d1b501fdfe20757
+=======
+            amixer_command( 'SPDIF in',  on )
+        else:
+            amixer_command( 'SPDIF in',  off )
+=======
+            amixer_command( 'SPDIF in',  'on' )
+        else:
+            amixer_command( 'SPDIF in',  'off' )
+>>>>>>> 2d6926cbd74e58c01c5b13b72f9860cc801a4f2a
+>>>>>>> b1a276123cafe66a3b4b1bbc90868961c06328db
 
 chk_headsetmic.stateChanged.connect( onCheckheadsetmic )
 chk_dmic.stateChanged.connect( onCheckdmic )
