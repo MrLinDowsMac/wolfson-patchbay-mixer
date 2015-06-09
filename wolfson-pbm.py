@@ -1585,18 +1585,22 @@ btn_LHPF4.setMenu(menu)
 jacks_dic['LHPF4'] = btn_LHPF4
 
 cmb_filtermode_1 = QtGui.QComboBox()
+cmb_filtermode_1.setObjectName('LHPF1 Mode')
 cmb_filtermode_1.addItem("High Pass")
 cmb_filtermode_1.addItem("Low Pass")
 
 cmb_filtermode_2 = QtGui.QComboBox()
+cmb_filtermode_2.setObjectName('LHPF2 Mode')
 cmb_filtermode_2.addItem("High Pass")
 cmb_filtermode_2.addItem("Low Pass")
 
 cmb_filtermode_3 = QtGui.QComboBox()
+cmb_filtermode_3.setObjectName('LHPF3 Mode')
 cmb_filtermode_3.addItem("High Pass")
 cmb_filtermode_3.addItem("Low Pass")
 
 cmb_filtermode_4 = QtGui.QComboBox()
+cmb_filtermode_4.setObjectName('LHPF4 Mode')
 cmb_filtermode_4.addItem("High Pass")
 cmb_filtermode_4.addItem("Low Pass")
 
@@ -2299,34 +2303,18 @@ chk_dmic.stateChanged.connect( onCheckdmic )
 chk_spdifin.stateChanged.connect( onCheckspdifin )
 
 
-def filter_mode1( combo ):
-    if combo == 0: #0 is the index of Low-Pass
-        amixer_command( 'LHPF1 Mode',  'High-pass' )
-    elif combo == 1: #is the index of High-pass 
-        amixer_command( 'LHPF1 Mode',  'Low-pass' )
-        
-def filter_mode2( combo ):
-    if combo == 0: #0 is the index of Low-Pass
-        amixer_command( 'LHPF2 Mode',  'High-pass' )
-    elif combo == 1: #is the index of High-pass 
-        amixer_command( 'LHPF2 Mode',  'Low-pass' )
+def filter_mode( combo ):
+        n = combo.objectName()[4]
+        if combo.currentIndex() == 0:
+            amixer_command( 'LHPF' + n  + ' Mode',  'High-pass' )
+        elif combo.currentIndex() == 1:
+            amixer_command( 'LHPF' + n  + ' Mode',  'Low-pass' )
 
-def filter_mode3( combo ):
-    if combo == 0: #0 is the index of Low-Pass
-        amixer_command( 'LHPF3 Mode',  'High-pass' )
-    elif combo == 1: #is the index of High-pass 
-        amixer_command( 'LHPF3 Mode',  'Low-pass' )
 
-def filter_mode4( combo ):
-    if combo == 0: #0 is the index of Low-Pass
-        amixer_command( 'LHPF4 Mode',  'High-pass' )
-    elif combo == 1: #is the index of High-pass 
-        amixer_command( 'LHPF4 Mode',  'Low-pass' )
-    
-cmb_filtermode_1.activated.connect( filter_mode1  )
-cmb_filtermode_2.activated.connect( filter_mode2  )
-cmb_filtermode_3.activated.connect( filter_mode3 )
-cmb_filtermode_4.activated.connect( filter_mode4 )
+cmb_filtermode_1.activated.connect( lambda index:  filter_mode(cmb_filtermode_1)  )
+cmb_filtermode_2.activated.connect( lambda index:  filter_mode(cmb_filtermode_2)  )
+cmb_filtermode_3.activated.connect( lambda index:  filter_mode(cmb_filtermode_3)  )
+cmb_filtermode_4.activated.connect( lambda index:  filter_mode(cmb_filtermode_4)  )
 
 
 
