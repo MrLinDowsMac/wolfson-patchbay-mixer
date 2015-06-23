@@ -684,6 +684,7 @@ HPOUT1L_connectors_layout.addWidget(btn_HPOUT1L_4)
 #HPOUT1L_connectors_layout.addStretch(1)
 
 HPOUT1L_layout = QHBoxLayout()
+#HPOUT1L_layout.setContentsMargins(0, 5, 0, 5)
 HPOUT1L_layout.addLayout(HPOUT1L_connectors_layout)
 HPOUT1L_layout.addWidget(lbl_HPOUT1L)
 
@@ -699,8 +700,14 @@ HPOUT1R_layout = QHBoxLayout()
 HPOUT1R_layout.addLayout(HPOUT1R_connectors_layout)
 HPOUT1R_layout.addWidget(lbl_HPOUT1R)
 
+#Add Separator
+HPOUT1_Separador = QFrame()
+HPOUT1_Separador.setFrameShape(QFrame.HLine)
+#HPOUT1_Separador.setLineWidth(3)
+#Join HPOUT1 L & R layouts into one
 HPOUT1_layout = QVBoxLayout()
 HPOUT1_layout.addLayout(HPOUT1L_layout)
+HPOUT1_layout.addWidget(HPOUT1_Separador)
 HPOUT1_layout.addLayout(HPOUT1R_layout)
 
 Headset_layout = QHBoxLayout()
@@ -845,9 +852,13 @@ HPOUT2R_layout = QHBoxLayout()
 HPOUT2R_layout.addLayout(HPOUT2R_connectors_layout)
 HPOUT2R_layout.addWidget(lbl_HPOUT2R)
 
+#Add Separator
+HPOUT2_Separador = QFrame()
+HPOUT2_Separador.setFrameShape(QFrame.HLine)
 HPOUT2_layout = QVBoxLayout()
 HPOUT2_layout.addStretch(1)
 HPOUT2_layout.addLayout(HPOUT2L_layout)
+HPOUT2_layout.addWidget(HPOUT2_Separador)
 HPOUT2_layout.addLayout(HPOUT2R_layout)
 HPOUT2_layout.addStretch(1)
 
@@ -993,9 +1004,14 @@ AIF2TX2_layout = QHBoxLayout()
 AIF2TX2_layout.addLayout(AIF2TX2_connectors_layout)
 AIF2TX2_layout.addWidget(lbl_AIF2TX2)
 
+#Add line
+AIF2TX_line = QFrame()
+AIF2TX_line.setFrameShape(QFrame.HLine)
+
 AIF2TX_layout = QVBoxLayout()
 AIF2TX_layout.addStretch(1)
 AIF2TX_layout.addLayout(AIF2TX1_layout)
+AIF2TX_layout.addWidget(AIF2TX_line)
 AIF2TX_layout.addLayout(AIF2TX2_layout)
 AIF2TX_layout.addStretch(1)
 
@@ -1140,9 +1156,14 @@ SPKOUTR_layout = QHBoxLayout()
 SPKOUTR_layout.addLayout(SPKOUTR_connectors_layout)
 SPKOUTR_layout.addWidget(lbl_SPKOUTR)
 
+#Add line
+SPKOUT_line = QFrame()
+SPKOUT_line.setFrameShape(QFrame.HLine)
+
 SPKOUT_layout = QVBoxLayout()
 SPKOUT_layout.addStretch(1)
 SPKOUT_layout.addLayout(SPKOUTL_layout)
+SPKOUT_layout.addWidget(SPKOUT_line)
 SPKOUT_layout.addLayout(SPKOUTR_layout)
 SPKOUT_layout.addStretch(1)
 
@@ -1321,9 +1342,14 @@ DRC1R_layout.addWidget(lbl_DRC1R)
 DRC1R_layout.addWidget(btn_DRC1R)
 
 
+#Add line
+DRC1_line = QFrame()
+DRC1_line.setFrameShape(QFrame.HLine)
+
 DRC1_layout = QVBoxLayout()
 DRC1_layout.addStretch(1)
 DRC1_layout.addLayout(DRC1L_layout)
+DRC1_layout.addWidget(DRC1_line)
 DRC1_layout.addLayout(DRC1R_layout)
 DRC1_layout.addStretch(1)
 
@@ -1707,11 +1733,22 @@ LHPF4_layout.addWidget(lbl_LHPF4)
 #LHPF4_layout.addWidget(btn_LHPF4)
 LHPF4_layout.addLayout(LHPF4_mode_layout)
 
+#Add lines to separate
+LHPF1_line = QFrame()
+LHPF2_line = QFrame()
+LHPF3_line = QFrame()
+LHPF1_line.setFrameShape(QFrame.HLine)
+LHPF2_line.setFrameShape(QFrame.HLine)
+LHPF3_line.setFrameShape(QFrame.HLine)
+
 LHPF_layout = QVBoxLayout()
 LHPF_layout.addStretch(1)
 LHPF_layout.addLayout(LHPF1_layout)
+LHPF_layout.addWidget(LHPF1_line)
 LHPF_layout.addLayout(LHPF2_layout)
+LHPF_layout.addWidget(LHPF2_line)
 LHPF_layout.addLayout(LHPF3_layout)
+LHPF_layout.addWidget(LHPF3_line)
 LHPF_layout.addLayout(LHPF4_layout)
 LHPF_layout.addStretch(1)
 
@@ -1721,34 +1758,76 @@ LowHighPassFilter_layout.addLayout(LHPF_layout)
 
 
 #                                                                        ////  In Devices Layouts  ////
+#Add lines
+HeadsetMic_line = QFrame()
+HeadsetMic_line.setFrameShape(QFrame.HLine)
+HeadsetMic_line.setLineWidth(3)
+
+DMIC_line = QFrame()
+DMIC_line.setFrameShape(QFrame.HLine)
+DMIC_line.setLineWidth(3)
+
+LineIn_line = QFrame()
+LineIn_line.setFrameShape(QFrame.HLine)
+LineIn_line.setLineWidth(3)
+
+SPDIFIN_line = QFrame()
+SPDIFIN_line.setFrameShape(QFrame.HLine)
+SPDIFIN_line.setLineWidth(3)
+
+
+
 #Put all the IN Devices
 In_layouts = QVBoxLayout()
 lbl_in = QLabel("IN Devices")
 In_layouts.addWidget(lbl_in)
 In_layouts.addLayout(HeadsetMic_layout) 
+In_layouts.addWidget(HeadsetMic_line)
 In_layouts.addLayout(DMIC_layout)
+In_layouts.addWidget(DMIC_line)
 In_layouts.addLayout(LineIn_layout)
+In_layouts.addWidget(LineIn_line)
 In_layouts.addLayout(SPDIF_IN_layout)
+In_layouts.addWidget(SPDIFIN_line)
 In_layouts.addLayout(Generators_layout)
 In_layouts.addStretch(1)
 
 
 #                                                                       /// Out Devices Layouts ///
+#Add line spacers
+Headset_line = QFrame()
+Headset_line.setFrameShape(QFrame.HLine)
+Headset_line.setLineWidth(3)
+LineOut_line=QFrame()
+LineOut_line.setFrameShape(QFrame.HLine)
+LineOut_line.setLineWidth(3)
+SPDIFOUT_line = QFrame()
+SPDIFOUT_line.setFrameShape(QFrame.HLine)
+SPDIFOUT_line.setLineWidth(3)
+
 Out_layouts = QVBoxLayout()
 lbl_out = QLabel("Out Devices")
 Out_layouts.addWidget(lbl_out)
 Out_layouts.addLayout(Headset_layout)
+Out_layouts.addWidget(Headset_line)
 Out_layouts.addLayout(LineOut_layout)
+Out_layouts.addWidget(LineOut_line)
 Out_layouts.addLayout(SPDIFOUT_layout)
+Out_layouts.addWidget(SPDIFOUT_line)
 Out_layouts.addLayout(Speakers_layout)
 Out_layouts.addStretch(1)
 
 #                                                                       ///Filters Layouts///
+#Add line spacers
+DRC1_line = QFrame()
+DRC1_line.setFrameShape(QFrame.HLine)
+DRC1_line.setLineWidth(3)
 
 Filters_layouts = QVBoxLayout()
 lbl_filters = QLabel("Filters")
 Filters_layouts.addWidget(lbl_filters)
 Filters_layouts.addLayout(DRC_layout)
+Filters_layouts.addWidget(DRC1_line)
 Filters_layouts.addLayout(LowHighPassFilter_layout)
 Filters_layouts.addStretch(1)
 
