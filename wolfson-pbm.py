@@ -2399,7 +2399,7 @@ cmb_filtermode_4.activated.connect( lambda index:  filter_mode(cmb_filtermode_4)
 
 # Create the view using the scene
 view = WiringGraphicsView(None, scene)
-view.resize(800,600)
+view.resize(700,800)
 view.show()
 view.setWindowTitle("Wolfson Patchbay and Mixer")
 
