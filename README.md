@@ -14,6 +14,14 @@ Just drag a button with a Jack connector icon and drop it into any input connect
 ##Usage:
 Get into the project directory and run `python wolfson-pbm.py`
 
+To connect a device to another: 
+- Press a button with a jack 1/8 connector icon of a device desired and select from the context menu where you want to connect. 
+- Or *right-click and drag* a button with the jack connector icon and *drop* it into a input female connector icon of the device you want to connect.
+In both cases a cable appears representing the connection.
+
+To Disconnect:
+-Just click the input female connector icon.
+
 ###Important note:
 This is currently incomplete. I implemented the most relevant devices only.
 I just code this in my spare time. Any aportation to code will be appreciated. Any refork to make the code more Object-Oriented is welcome.
