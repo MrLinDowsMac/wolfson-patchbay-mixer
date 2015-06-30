@@ -2404,3 +2404,4 @@ view.show()
 view.setWindowTitle("Wolfson Patchbay and Mixer")
 
 app.exec_()
+app.deleteLater()

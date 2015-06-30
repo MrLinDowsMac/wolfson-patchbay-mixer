@@ -10,8 +10,12 @@ Just drag a button with a Jack connector icon and drop it into any input connect
 - Python 2.7 or later. Already included in Raspbian distribution.
 - PyQT4 library. Install it from Raspbian repository with `sudo apt-get install python-qt4`
 
-##Warning
-This is currently incomplete.
+
+##Usage:
+Get into the project directory and run `python wolfson-pbm.py`
+
+###Important note:
+This is currently incomplete. I implemented the most relevant devices only.
 I just code this in my spare time. Any aportation to code will be appreciated. Any refork to make the code more Object-Oriented is welcome.
 I didn't tested all outputs because I don't have all the gear required for testing like SPDIF equipment, 4-pole jack headsets or loudspeakers.
 
@@ -20,5 +24,3 @@ I didn't tested all outputs because I don't have all the gear required for testi
 - Add Volume Controls
 - Add EQ inputs/outputs
 - Support to the Cirrus Audio Card (for the B+ models)
-
-
